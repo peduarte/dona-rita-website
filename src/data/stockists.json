@@ -1,0 +1,50 @@
+[
+	{
+		"name": "Eat 17 Walthamstow",
+		"area": "Walthamstow",
+		"address": "28-30 Orford Rd",
+		"postCode": "E17 9NJ"
+	},
+
+	{
+		"name": "Eat 17 Hackney",
+		"area": "Clapton",
+		"address": "64-66 Brooksby's Walk",
+		"postCode": "E9 6DA"
+	},
+
+	{
+		"name": "The Deli Downstairs",
+		"area": "Victoria Park Village",
+		"address": "211 Victoria Park Rd",
+		"postCode": "E9 7JN"
+	},
+
+	{
+		"name": "The Grocery",
+		"area": "Shoreditch",
+		"address": "52-56 Kingsland Rd",
+		"postCode": "E2 8DP"
+	},
+
+	{
+		"name": "Raw Store",
+		"area": "Shoreditch",
+		"address": "343 Old St",
+		"postCode": "EC1V 9LL"
+	},
+
+	{
+		"name": "Pickles of London",
+		"area": "Dalston",
+		"address": "45 Kingsland High St",
+		"postCode": "E8 2JS"
+	},
+
+	{
+		"name": "Portobello Wholefoods",
+		"area": "Notting Hill",
+		"address": "266 Portobello Rd",
+		"postCode": "W10 5TY"
+	}
+]

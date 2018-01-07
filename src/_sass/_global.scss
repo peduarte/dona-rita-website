@@ -1,0 +1,801 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $fontDefault;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0.02em;
+
+	background: $colorBackground;
+
+	@include medium {
+		font-size: 18px;
+		line-height: 30px;
+
+		// For pages with full coloured background
+		// this is needed to keep the 10px spacing around it.
+		// Like everything else this approach needs improving
+		// at some point
+		padding-top: 10px;
+	}
+}
+::selection {
+	background-color: $colorSalmon;
+	color: white;
+}
+address {
+	font-style: normal;
+}
+
+.main {
+	opacity: 0;
+	animation: fadeContent 1600ms 600ms ease-in-out forwards;
+}
+
+@keyframes fadeContent {
+	100% {
+		opacity: 1;
+	}
+}
+
+.typist { display: inline-block}
+
+.logo {
+	margin: 20px 0 0 20px;
+
+	@include medium {
+		position: fixed;
+		margin: 0;
+		top: 20px;
+		left: 20px;
+		z-index: 2;
+	}
+}
+
+h1, h2, h3 {
+	font-family: $fontHighlight;
+}
+
+h1, .h1 {
+	font-size: 36px;
+	line-height: 36px;
+	letter-spacing: 1px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	@include medium {
+		font-size: 60px;
+		line-height: 60px;
+		letter-spacing: 1px;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+}
+
+h2, .h2, h3, .h3 {
+	font-size: 20px;
+	line-height: 36px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	@include medium {
+		font-size: 30px;
+		line-height: 36px;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+}
+
+h3, .h3 {
+	margin-top: 20px;
+
+	@include medium {
+		margin-top: 40px;
+	}
+}
+
+p {
+	margin-bottom: 20px;
+
+	@include medium {
+		margin-bottom: 40px;
+	}
+}
+
+a {
+	color: inherit;
+}
+
+
+.main-nav {
+	&.-mobile {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9;
+
+		background: white;
+		height: 100vh;
+		width: 100%;
+
+		font-size: 16px;
+		line-height: 30px;
+
+		&.is-opened {
+			display: flex;
+		}
+
+		a {
+			display: inline-block;
+			margin: 10px 0;
+			text-decoration: none;
+		}
+
+		@include medium {
+			display: none !important;
+		}
+	}
+
+	&.-desktop {
+		margin-top: 15px;
+		display: none;
+
+		@include medium {
+			display: flex;
+			align-items: baseline;
+		}
+
+		a:not(.button) {
+			text-decoration: none;
+			padding: 10px 0;
+			display: block;
+
+			@include medium {
+				display: inline-block;
+				padding: 15px 20px;
+
+				&:not(.active):hover {
+					text-decoration: underline;
+				}
+			}
+
+			&:first-child {
+				@include medium {
+					margin-left: -20px; // offset padding of first link
+				}
+			}
+
+			&.active {
+				color: $colorYellow;
+			}
+		}
+
+		.button {
+			margin-left: auto;
+		}
+	}
+}
+
+.mobile-menu {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 8;
+
+	@include medium {
+		display: none;
+	}
+}
+
+.button {
+	text-decoration: none;
+	display: inline-block;
+	border: 1px solid currentColor;
+	font-size: 14px;
+	line-height: 30px;
+	padding: 15px 30px;
+	letter-spacing: 0.2em;
+
+	&:hover {
+		background-color: $colorYellow;
+		text-decoration: none;
+	}
+
+	.button-group & {
+		display: block;
+		width: 100%;
+		text-align: center;
+
+		&:not(:last-child) {
+			border-bottom: none;
+		}
+	}
+}
+
+.small {
+	font-size: 12px;
+	line-height: 22px;
+	margin-bottom: 20px;
+
+	@include medium {
+		font-size: 13px;
+		line-height: 24px;
+	}
+}
+
+.faded {
+	color: rgba(black, 0.4);
+
+	.-blue & {
+		color: rgba(white, 0.4);
+
+		a {
+			color: rgba(white, 0.6);
+		}
+	}
+}
+
+.measure {
+	@include medium {
+		padding-right: 60px;
+	}
+}
+
+.measure-wider {
+	@include wide {
+		padding-right: 60px;
+	}
+}
+
+.title-desc {
+	display: block;
+	color: $colorSalmon;
+
+	&::selection {
+		background-color: black;
+	}
+}
+
+sup {
+	font-family: $fontHighlight;
+	font-size: 25px;
+	line-height: 0;
+	font-weight: bold;
+
+	&.-yellow {
+		color: $colorYellow;
+	}
+	&.-salmon {
+		color: $colorSalmon;
+	}
+	&.-blue {
+		color: $colorBlue;
+	}
+}
+
+.footnote {
+	position: relative;
+	margin-top: 20px;
+
+	@include medium {
+		margin-top: 0;
+	}
+
+	&::before {
+		content: attr(data-id);
+		font-family: $fontHighlight;
+		font-weight: bold;
+		font-size: 25px;
+		line-height: 25px;
+		color: inherit;
+
+		position: absolute;
+		top: -24px;
+		left: 0;
+	}
+
+	&.-yellow::before {
+		color: $colorYellow;
+	}
+	&.-salmon::before {
+		color: $colorSalmon;
+	}
+	&.-blue::before {
+		color: $colorBlue;
+	}
+}
+
+img {
+	vertical-align: middle;
+	width: 100%;
+	margin-bottom: 20px;
+
+	@include medium {
+		margin-bottom: 10px;
+	}
+}
+
+// REFACTOR BELOW
+.section {
+	padding: 20px 10px;
+	margin-bottom: 10px;
+	position: relative;
+
+	&:first-child {
+		@include medium {
+			padding-top: 80px;
+		}
+
+		@include wide {
+			padding-top: 100px;
+		}
+	}
+
+	@include medium {
+		padding: 40px 0;
+
+		/*
+		Pseudo elements to create a 10px "gutter" and overlap it
+		on the left and right sides of the section with the
+		color of the background to give it a recessed effect
+		without affecting the grid. MVP bro.
+		*/
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			background: $colorBackground;
+			width: 10px;
+			height: 100%;
+			top: 0;
+		}
+		&:before {
+			left: 0;
+		}
+		&:after {
+			right: 0;
+		}
+	}
+
+	&.-white {
+		background-color: white;
+	}
+
+	&.-blue {
+		background-color: $colorBlue;
+		color: white;
+	}
+
+	&.-salmon {
+		background-color: $colorSalmon;
+		color: white;
+	}
+
+	&.-yellow {
+		background-color: $colorYellow;
+		color: white;
+	}
+}
+
+.product-section {
+	padding-top: 70px;
+
+	@include medium {
+		padding-top: 140px;
+	}
+}
+
+// STOCKISTS
+.stockist-list {
+	@include medium {
+		margin: 30px 0;
+	}
+
+	// 💩
+	div div {
+		margin-bottom: 30px;
+
+		@include medium {
+			padding-right: 15px;
+		}
+	}
+
+	h3 {
+		margin-bottom: 15px;
+	}
+}
+
+.stockist-interest {
+	padding-bottom: 60px;
+}
+
+// HOME PRODUCT
+.home-product {
+	padding: 60px 0;
+
+	@include medium {
+		padding-top: 120px;
+		padding-bottom: 160px;
+	}
+}
+
+// PRESS ICONS
+.press-icons {
+
+	a {
+		display: block;
+		opacity: 0.4;
+		transition: opacity 150ms ease-out;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+// TESTIMONIAL
+.testimonial {
+	@include medium {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+}
+
+// CONTACT
+.contact {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.contact-phone {
+	font-family: $fontHighlight;
+	font-weight: bold;
+	display: block;
+	font-size: 30px;
+	line-height: 30px;
+}
+
+.contact-or {
+	display: block;
+	line-height: 1px;
+	height: 1px;
+	background: #979797;
+	text-align: center;
+	margin: 40px 0;
+
+	span {
+		display: inline-block;
+		padding: 0 10px;
+		position: relative;
+		top: -10px;
+		line-height: 20px;
+		background: $colorBackground;
+	}
+}
+
+.contact-link {
+	display: block;
+	font-size: 20px;
+	line-height: 32px;
+}
+
+// UTILITIES
+.yellow {
+	color: $colorYellow;
+}
+.salmon {
+	color: $colorSalmon;
+}
+.blue {
+	color: $colorBlue;
+}
+
+.center {
+	text-align: center;
+}
+
+// FAKE IMG
+.fake-img-group {
+	@include medium {
+		height: 33vmax;
+		max-height: 420px;
+	}
+}
+
+.fake-img-wrapper {
+	@include medium {
+		height: 100%;
+	}
+}
+
+.fake-img {
+	height: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-bottom: 20px;
+	position: relative;
+	background-color: $colorSalmon;
+
+	@include medium {
+		margin-bottom: 0;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: $colorSalmon;
+	}
+
+	&.is-loaded::after {
+		opacity: 0;
+		transition: opacity 2000ms $easeOutQuart;
+	}
+
+	&.-two-x-three {
+		padding-top: (3 / 2) * 100 + unquote("%");
+	}
+	&.-three-x-two {
+		padding-top: (2 / 3) * 100 + unquote("%");
+	}
+	&.-sixteen-x-seven {
+		padding-top: (7 / 16) * 100 + unquote("%");
+	}
+	&.-square {
+		padding-top: 100%;
+	}
+
+	.fake-img-group & {
+		@include medium {
+			height: 100%;
+			padding-top: 0;
+		}
+	}
+
+}
+
+// BANNER
+.banner {
+	max-width: 100% !important;
+	padding: 0 20px;
+
+	@include medium {
+		padding: 0 10px;
+		margin-bottom: 10px;
+	}
+}
+
+.banner-img {
+	&.-small {
+		@include medium {
+			display: none;
+		}
+	}
+	&.-medium {
+		display: none;
+		@include medium {
+			display: block;
+		}
+	}
+}
+
+.fluid {
+	width: 100%;
+}
+
+// FORMS
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+	-webkit-appearance: none;
+	appearance: none;
+	font-size: 16px;
+	font-family: inherit;
+	line-height: 30px;
+	padding: 15px 30px;
+	border: 1px solid darken($colorBackground, 10%);
+	border-radius: 0;
+	margin: 0 20px 20px 0;
+
+	width: 100%;
+
+	@include medium {
+		width: 200px;
+	}
+
+	&:hover {
+		border-color: #999;
+	}
+
+	&:focus {
+		border-color: black;
+		outline: none;
+	}
+}
+
+select {
+	-webkit-appearance: none;
+	appearance: none;
+	font-size: 16px;
+	font-family: inherit;
+	line-height: 30px;
+	padding: 15px 40px 15px 30px;
+	border: 1px solid darken($colorBackground, 10%);
+	border-radius: 0;
+	margin: 0 20px 20px 0;
+
+	width: 100%;
+
+	@include medium {
+		width: 200px;
+	}
+
+	&:hover {
+		border-color: #999;
+	}
+
+	&:focus {
+		border-color: black;
+		outline: none;
+	}
+}
+
+button {
+	-webkit-appearance: none;
+	appearance: none;
+	display: inline-block;
+	background: transparent;
+	border: 1px solid currentColor;
+	font-size: 14px;
+	font-family: inherit;
+	line-height: 30px;
+	padding: 15px 30px;
+	letter-spacing: 0.2em;
+	margin: 0 20px 20px 0;
+
+	width: 100%;
+
+	border-radius: 0; // thanks to chrome
+
+	@include medium {
+		width: auto;
+	}
+
+	&:not(:disabled):hover {
+		background-color: $colorSalmon;
+		text-decoration: none;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+	}
+}
+
+.postcode-message {
+	font-size: 14px;
+	padding: 20px;
+	margin-bottom: 20px;
+	color: white;
+	background-color: $colorSalmon;
+
+	&.postcode-shop {
+		background-color: $colorBlue;
+	}
+}
+
+.delivery-date {
+	background-color: $colorYellow;
+	color: white;
+	padding: 10px 20px;
+
+	display: flex;
+	align-items: center;
+
+	svg {
+		width: 26px;
+		margin-right: 10px;
+	}
+}
+
+
+// Deliery interest form styling
+.delivery-interest-form {
+	p {
+		margin-bottom: 10px;
+	}
+
+	.mc-field-group {
+		@include medium {
+			display: flex;
+		}
+	}
+
+	input[type="email"],
+	button {
+		padding: 10px;
+
+	}
+
+	input[type="email"] {
+		@include medium {
+			flex: 3;
+		}
+	}
+
+	button {
+		color: white;
+
+		@include medium {
+			flex: 1;
+		}
+
+		&:not(:disabled):hover {
+			background-color: white;
+			color: $colorSalmon;
+		}
+	}
+}
+
+// Shopify
+.shopify-buy__option-select-wrapper {
+	position: relative;
+	display: inline;
+}
+
+.shopify-buy__select-icon {
+	width: 15px;
+	position: absolute;
+	right: 45px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.shopify-buy__quantity-container,
+.shopify-buy__btn-wrapper {
+	display: inline-block;
+	width: 100%;
+
+	@include medium {
+		width: auto;
+	}
+}
+
+.shopify-buy__option-select__label {
+	display: none;
+}
+.shopify-buy__quantity-container {
+	position: relative;
+	padding-top: 30px;
+
+	&:after {
+		content: "Qty:";
+		font-size: 12px;
+		line-height: 22px;
+		color: rgba(black, 0.4);
+
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		@include medium {
+			font-size: 13px;
+			line-height: 24px;
+		}
+	}
+}

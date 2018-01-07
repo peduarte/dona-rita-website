@@ -1,0 +1,38 @@
+/**
+*
+* Settings
+*
+**/
+
+$fontDefault: Montserrat, serif;
+$fontHighlight: Garamond, Times, sans-serif;
+
+// Defining colors
+$colorBackground: #f6f6f6;
+$colorYellow: #e6a941;
+$colorBlue: #2839a4;
+$colorSalmon: #f09a7a;
+
+// Animation
+$easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$easeInOutQuad:  cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+@mixin small {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (min-width: 800px) {
+        @content;
+    }
+}
+
+@mixin wide {
+    @media (min-width: 1050px) {
+        @content;
+    }
+}
