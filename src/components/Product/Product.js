@@ -129,21 +129,20 @@ export class Product extends React.Component {
 												<div className="mc-field-group">
 													<input
 														type="email"
-														value=""
 														placeholder="Your email address"
 														name="EMAIL"
 														id="mce-EMAIL"
 													/>
 													<input
 														type="text"
-														value=""
+														value={this.state.postcode}
 														name="POSTCODE"
 														id="mce-POSTCODE"
 														hidden
 													/>
 													<input
 														type="text"
-														value=""
+														value={this.state.outcode}
 														name="OUTCODE"
 														id="mce-OUTCODE"
 														hidden
