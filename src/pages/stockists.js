@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags';
-import { Section } from '../components/Section/Section';
-import { Contact } from '../components/Contact/Contact';
-import { FakeImg } from '../components/FakeImg/FakeImg';
-import { Banner } from '../components/Banner/Banner';
+import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags'
+import { Section } from '../components/Section/Section'
+import { Contact } from '../components/Contact/Contact'
+import { FakeImg } from '../components/FakeImg/FakeImg'
+import { Banner } from '../components/Banner/Banner'
 
-import stockImg from '../images/stock.jpg';
-import fullWidthImageTwoHandsImg from '../images/full-width-image-twohands.jpg';
+import stockImg from '../images/stock.jpg'
+import fullWidthImageTwoHandsImg from '../images/full-width-image-twohands.jpg'
 
 function Stockist({ className, shop }) {
 	return (
@@ -23,19 +23,18 @@ function Stockist({ className, shop }) {
 				<a
 					href="https://www.google.com/maps/dir/?api=1&destination={ shop.postCode }"
 					className="small faded"
-					target="_blank"
-				>
+					target="_blank">
 					View on map
 				</a>
 			</div>
 		</div>
-	);
+	)
 }
 
 function StockistsPage({ data }) {
-	const groups = [];
+	const groups = []
 	for (let group in data) {
-		groups.push(data[group]);
+		groups.push(data[group])
 	}
 
 	return (
@@ -61,10 +60,10 @@ function StockistsPage({ data }) {
 										shop={shop.node}
 										className={index === 0 ? 'md-push-2 lg-push-3' : ''}
 									/>
-								);
+								)
 							})}
 						</div>
-					);
+					)
 				})}
 			</Section>
 
@@ -75,8 +74,7 @@ function StockistsPage({ data }) {
 					<a
 						className="button"
 						href="./product-request-form.pdf"
-						target="_blank"
-					>
+						target="_blank">
 						Get request form
 					</a>
 				</div>
@@ -115,7 +113,7 @@ function StockistsPage({ data }) {
 
 			<Contact />
 		</div>
-	);
+	)
 }
 
 export const pageQuery = graphql`
@@ -143,6 +141,6 @@ export const pageQuery = graphql`
 			}
 		}
 	}
-`;
+`
 
-export default StockistsPage;
+export default StockistsPage

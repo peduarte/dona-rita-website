@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags';
-import { Section } from '../components/Section/Section';
-import { Contact } from '../components/Contact/Contact';
-import { FakeImg } from '../components/FakeImg/FakeImg';
+import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags'
+import { Section } from '../components/Section/Section'
+import { Contact } from '../components/Contact/Contact'
+import { FakeImg } from '../components/FakeImg/FakeImg'
 
-import ingredientsImg from '../images/ingredients.jpg';
+import ingredientsImg from '../images/ingredients.jpg'
 
 function IngredientsPage() {
 	return (
@@ -51,7 +51,7 @@ function IngredientsPage() {
 				<Contact />
 			</Section>
 		</div>
-	);
+	)
 }
 
-export default IngredientsPage;
+export default IngredientsPage

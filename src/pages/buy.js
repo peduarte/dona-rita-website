@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags';
-import { Section } from '../components/Section/Section';
-import { Contact } from '../components/Contact/Contact';
-import { Product } from '../components/Product/Product';
-import { Banner } from '../components/Banner/Banner';
+import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags'
+import { Section } from '../components/Section/Section'
+import { Contact } from '../components/Contact/Contact'
+import { Product } from '../components/Product/Product'
+import { Banner } from '../components/Banner/Banner'
 
-import bannerMobileImg from '../images/banner-mobile.jpg';
-import bannerImg from '../images/banner.jpg';
+import bannerMobileImg from '../images/banner-mobile.jpg'
+import bannerImg from '../images/banner.jpg'
 
 function BuyPage({ data, location }) {
 	return (
@@ -26,7 +26,7 @@ function BuyPage({ data, location }) {
 				<Contact />
 			</Section>
 		</div>
-	);
+	)
 }
 
 export const pageQuery = graphql`
@@ -48,6 +48,6 @@ export const pageQuery = graphql`
 			}
 		}
 	}
-`;
+`
 
-export default BuyPage;
+export default BuyPage

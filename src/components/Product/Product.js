@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactGA from 'react-ga';
-import queryString from 'query-string';
+import React from 'react'
+import ReactGA from 'react-ga'
+import queryString from 'query-string'
 
-import { ProductHolder } from './ProductHolder';
-import { PostcodeValidator } from '../PostcodeValidator/PostcodeValidator';
+import { ProductHolder } from './ProductHolder'
+import { PostcodeValidator } from '../PostcodeValidator/PostcodeValidator'
 
-import productImg from '../../images/product.png';
+import productImg from '../../images/product.png'
 
 export class Product extends React.Component {
 	constructor(props) {
-		super(props);
+		super(props)
 
 		this.state = {
 			counter: 0,
@@ -17,11 +17,11 @@ export class Product extends React.Component {
 			outcode: '',
 			isValid: false,
 			isDeliverable: false,
-		};
+		}
 	}
 
 	handleValidPostcode = (postcode, outcode) => {
-		const isDeliverable = this.props.postcodes.indexOf(outcode) > -1;
+		const isDeliverable = this.props.postcodes.indexOf(outcode) > -1
 
 		this.setState(prevState => {
 			return {
@@ -30,9 +30,9 @@ export class Product extends React.Component {
 				outcode,
 				isValid: true,
 				isDeliverable,
-			};
-		});
-	};
+			}
+		})
+	}
 
 	handleInvalidPostcode = postcode => {
 		this.setState(prevState => {
@@ -42,21 +42,21 @@ export class Product extends React.Component {
 				outcode: '',
 				isValid: false,
 				isDeliverable: false,
-			};
-		});
-	};
+			}
+		})
+	}
 
 	getParsedQueryString = () => {
-		return queryString.parse(this.props.location.search);
-	};
+		return queryString.parse(this.props.location.search)
+	}
 
 	shouldSkipValidation = () => {
-		return this.getParsedQueryString().skip !== undefined ? true : false;
-	};
+		return this.getParsedQueryString().skip !== undefined ? true : false
+	}
 
 	getInitialQty = () => {
-		return this.getParsedQueryString().qty;
-	};
+		return this.getParsedQueryString().qty
+	}
 
 	componentWillUpdate(nextProps, nextState) {
 		if (nextState.isValid && process.env.NODE_ENV !== 'development') {
@@ -64,7 +64,7 @@ export class Product extends React.Component {
 				category: 'Postcode',
 				action: nextState.isDeliverable ? 'deliverable' : 'undeliverable',
 				label: nextState.outcode,
-			});
+			})
 		}
 	}
 
@@ -128,8 +128,7 @@ export class Product extends React.Component {
 												name="mc-embedded-subscribe-form"
 												className="delivery-interest-form"
 												target="_blank"
-												noValidate
-											>
+												noValidate>
 												<h4>Sorry, we don't deliver there.</h4>
 												<p>
 													But we’re expanding fast! To vote for your area, enter
@@ -162,8 +161,7 @@ export class Product extends React.Component {
 												{/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
 												<div
 													style={{ position: 'absolute', left: '-5000px' }}
-													aria-hidden="true"
-												>
+													aria-hidden="true">
 													<input
 														type="text"
 														name="b_eacce3d5004edba44cd8a399b_23c2a13999"
@@ -199,8 +197,7 @@ export class Product extends React.Component {
 															href={`https://www.google.com/maps/dir/?api=1&destination=${
 																shop.node.postCode
 															}`}
-															target="_blank"
-														>
+															target="_blank">
 															View on map
 														</a>
 													</div>
@@ -212,6 +209,6 @@ export class Product extends React.Component {
 					</div>
 				</div>
 			</div>
-		);
+		)
 	}
 }

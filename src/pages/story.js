@@ -1,15 +1,15 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React from 'react'
+import Link from 'gatsby-link'
 
-import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags';
-import { Section } from '../components/Section/Section';
-import { Contact } from '../components/Contact/Contact';
-import { FakeImg } from '../components/FakeImg/FakeImg';
-import { Banner } from '../components/Banner/Banner';
+import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags'
+import { Section } from '../components/Section/Section'
+import { Contact } from '../components/Contact/Contact'
+import { FakeImg } from '../components/FakeImg/FakeImg'
+import { Banner } from '../components/Banner/Banner'
 
-import fullWidthImageRollingImg from '../images/full-width-image-rolling.jpg';
-import storyImg from '../images/story.jpg';
-import familyImg from '../images/family.jpg';
+import fullWidthImageRollingImg from '../images/full-width-image-rolling.jpg'
+import storyImg from '../images/story.jpg'
+import familyImg from '../images/family.jpg'
 
 function StoryPage() {
 	return (
@@ -102,7 +102,7 @@ function StoryPage() {
 
 			<Contact />
 		</div>
-	);
+	)
 }
 
-export default StoryPage;
+export default StoryPage

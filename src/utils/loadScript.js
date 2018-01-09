@@ -8,5 +8,5 @@ export function loadScript(url) {
 				onerror: reject,
 			})
 		)
-	);
+	)
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from 'react'
+import Helmet from 'react-helmet'
 
 export function TitleAndMetaTags({ url, pathname, title, description }) {
 	return (
@@ -24,7 +24,7 @@ export function TitleAndMetaTags({ url, pathname, title, description }) {
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:creator" content="@oidonarita" />
 		</Helmet>
-	);
+	)
 }
 
 TitleAndMetaTags.defaultProps = {
@@ -32,4 +32,4 @@ TitleAndMetaTags.defaultProps = {
 	pathname: '',
 	title: 'Dona Rita',
 	description: 'Brazilian cheese bread. Pão de Queijo.',
-};
+}

@@ -1,48 +1,48 @@
-import React from 'react';
+import React from 'react'
 
-import { CalendarIcon } from '../../icons/CalendarIcon';
-import { shopifyOptions } from './shopifyOptions';
-import { loadScript } from '../../utils/loadScript';
+import { CalendarIcon } from '../../icons/CalendarIcon'
+import { shopifyOptions } from './shopifyOptions'
+import { loadScript } from '../../utils/loadScript'
 
 export class ProductHolder extends React.Component {
 	constructor(props) {
-		super(props);
+		super(props)
 
-		this.buyButton = null;
-		this.qtyInput = null;
-		this.Product = null;
+		this.buyButton = null
+		this.qtyInput = null
+		this.Product = null
 
-		this.state = { isBelowMin: false };
+		this.state = { isBelowMin: false }
 	}
 
 	onInputChange = event => {
 		if (Number(event.target.value) >= this.props.minQty) {
-			this.buyButton.removeAttribute('disabled');
-			this.setState({ isBelowMin: false });
+			this.buyButton.removeAttribute('disabled')
+			this.setState({ isBelowMin: false })
 		} else {
-			this.buyButton.setAttribute('disabled', 'disabled');
-			this.setState({ isBelowMin: true });
+			this.buyButton.setAttribute('disabled', 'disabled')
+			this.setState({ isBelowMin: true })
 		}
-	};
+	}
 
 	afterShopifyInit = component => {
-		this.Product.selectedQuantity = this.props.initialQty;
+		this.Product.selectedQuantity = this.props.initialQty
 
-		this.buyButton = component.node.querySelector('.shopify-buy__btn');
-		this.qtyInput = component.node.querySelector('.shopify-buy__quantity');
+		this.buyButton = component.node.querySelector('.shopify-buy__btn')
+		this.qtyInput = component.node.querySelector('.shopify-buy__quantity')
 
-		this.buyButton.setAttribute('disabled', 'disabled');
+		this.buyButton.setAttribute('disabled', 'disabled')
 
-		this.qtyInput.addEventListener('change', this.onInputChange);
-		this.qtyInput.addEventListener('blur', this.onInputChange);
-		this.qtyInput.addEventListener('keyup', this.onInputChange);
-	};
+		this.qtyInput.addEventListener('change', this.onInputChange)
+		this.qtyInput.addEventListener('blur', this.onInputChange)
+		this.qtyInput.addEventListener('keyup', this.onInputChange)
+	}
 
 	afterShopifyRender = component => {
 		if (this.Product.selectedQuantity < this.props.minQty) {
-			this.Product.selectedQuantity = this.props.minQty;
+			this.Product.selectedQuantity = this.props.minQty
 		}
-	};
+	}
 
 	shopifyReady = ui => {
 		ui.createComponent('product', {
@@ -50,7 +50,7 @@ export class ProductHolder extends React.Component {
 			node: document.getElementById('product-inject'),
 			moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
 			options: shopifyOptions(this.afterShopifyInit, this.afterShopifyRender),
-		});
+		})
 
 		// 💩 everytime `ui.createComponent` is called is adds a new product to
 		// to `ui.components.product` array. I can't find a way to append the
@@ -58,9 +58,9 @@ export class ProductHolder extends React.Component {
 		// I need to ensure `this.Product` always refers to the latest instance
 		// of `ui.components.product`
 		const length =
-			ui.components.product.length > 1 ? ui.components.product.length - 1 : 0;
-		this.Product = ui.components.product[length];
-	};
+			ui.components.product.length > 1 ? ui.components.product.length - 1 : 0
+		this.Product = ui.components.product[length]
+	}
 
 	componentDidMount() {
 		const shopifyBuyInit = () => {
@@ -68,26 +68,26 @@ export class ProductHolder extends React.Component {
 				domain: 'dona-rita.myshopify.com',
 				apiKey: '260e658ec8cdc689ca1342a79adba733',
 				appId: '6',
-			});
+			})
 
-			ShopifyBuy.UI.onReady(client).then(ui => this.shopifyReady(ui));
-		};
+			ShopifyBuy.UI.onReady(client).then(ui => this.shopifyReady(ui))
+		}
 
 		if (window.ShopifyBuy && window.ShopifyBuy.UI) {
-			shopifyBuyInit();
+			shopifyBuyInit()
 		} else {
 			loadScript(
 				'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js'
 			).then(shopifyBuyInit, error => {
-				console.log(`Failed to load script: ${error}`);
-			});
+				console.log(`Failed to load script: ${error}`)
+			})
 		}
 	}
 
 	componentWillUnmount() {
-		this.qtyInput.removeEventListener('change', this.onInputChange);
-		this.qtyInput.removeEventListener('blur', this.onInputChange);
-		this.qtyInput.removeEventListener('keyup', this.onInputChange);
+		this.qtyInput.removeEventListener('change', this.onInputChange)
+		this.qtyInput.removeEventListener('blur', this.onInputChange)
+		this.qtyInput.removeEventListener('keyup', this.onInputChange)
 	}
 
 	render() {
@@ -105,11 +105,11 @@ export class ProductHolder extends React.Component {
 					</p>
 				)}
 			</div>
-		);
+		)
 	}
 }
 
 ProductHolder.defaultProps = {
 	minQty: 2,
 	initialQty: 2,
-};
+}

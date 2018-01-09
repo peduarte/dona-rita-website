@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 export class PostcodeValidator extends React.Component {
 	constructor(props) {
-		super(props);
+		super(props)
 
-		this.state = { value: '' };
+		this.state = { value: '' }
 	}
 
 	render() {
@@ -21,26 +21,26 @@ export class PostcodeValidator extends React.Component {
 					Check
 				</button>
 			</div>
-		);
+		)
 	}
 
 	handleChange = event => {
-		this.setState({ value: event.target.value });
-	};
+		this.setState({ value: event.target.value })
+	}
 
 	handleSubmit = () => {
-		const { onValidPostcode, onInvalidPostcode } = this.props;
-		const { value } = this.state;
+		const { onValidPostcode, onInvalidPostcode } = this.props
+		const { value } = this.state
 
 		fetch(`https://api.postcodes.io/postcodes/${value}`)
 			.then(response => response.json())
 			.then(data => {
-				const { status, result } = data;
+				const { status, result } = data
 				if (status === 200) {
-					onValidPostcode(result.postcode, result.outcode);
-					return;
+					onValidPostcode(result.postcode, result.outcode)
+					return
 				}
-				onInvalidPostcode(value);
-			});
-	};
+				onInvalidPostcode(value)
+			})
+	}
 }

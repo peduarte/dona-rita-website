@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 export function BurgerIcon() {
 	return (
@@ -11,9 +11,8 @@ export function BurgerIcon() {
 			stroke="currentcolor"
 			strokeLinecap="round"
 			strokeLinejoin="round"
-			strokeWidth="2"
-		>
+			strokeWidth="2">
 			<path d="M4 8h24M4 16h24M4 24h24" />
 		</svg>
-	);
+	)
 }

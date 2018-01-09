@@ -25,5 +25,5 @@ export function shopifyOptions(afterInitCb, afterRenderCb) {
 		cart: {
 			popup: false,
 		},
-	};
+	}
 }

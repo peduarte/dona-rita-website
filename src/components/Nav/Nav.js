@@ -1,17 +1,17 @@
-import React from 'react';
-import Link from 'gatsby-link';
+import React from 'react'
+import Link from 'gatsby-link'
 
-import { BurgerIcon } from '../../icons/BurgerIcon';
-import { CrossIcon } from '../../icons/CrossIcon';
+import { BurgerIcon } from '../../icons/BurgerIcon'
+import { CrossIcon } from '../../icons/CrossIcon'
 
 export class Nav extends React.Component {
 	constructor(props) {
-		super(props);
-		this.state = { isOpened: false };
+		super(props)
+		this.state = { isOpened: false }
 	}
 
-	handleClose = () => this.setState({ isOpened: false });
-	handleOpen = () => this.setState({ isOpened: true });
+	handleClose = () => this.setState({ isOpened: false })
+	handleOpen = () => this.setState({ isOpened: true })
 
 	renderLinks = (links, onClick) => {
 		return links.map(link => (
@@ -20,12 +20,11 @@ export class Nav extends React.Component {
 				className={link.to === '/buy' ? 'button' : ''}
 				to={link.to}
 				title={link.name}
-				onClick={onClick}
-			>
+				onClick={onClick}>
 				{link.name}
 			</Link>
-		));
-	};
+		))
+	}
 
 	render() {
 		const links = [
@@ -34,7 +33,7 @@ export class Nav extends React.Component {
 			{ name: 'Press', to: '/press' },
 			{ name: 'Stockists', to: '/stockists' },
 			{ name: 'Buy online', to: '/buy' },
-		];
+		]
 		return (
 			<div className="grid">
 				<a className="mobile-menu -open" onClick={this.handleOpen}>
@@ -45,8 +44,7 @@ export class Nav extends React.Component {
 					id="mobile-nav"
 					className={`main-nav -mobile ${
 						this.state.isOpened ? 'is-opened' : null
-					}`}
-				>
+					}`}>
 					<a className="mobile-menu -close" onClick={this.handleClose}>
 						<CrossIcon />
 					</a>
@@ -56,6 +54,6 @@ export class Nav extends React.Component {
 					{this.renderLinks(links)}
 				</nav>
 			</div>
-		);
+		)
 	}
 }
