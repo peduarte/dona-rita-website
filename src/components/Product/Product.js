@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
+import queryString from 'query-string';
 
 import { ProductHolder } from './ProductHolder';
 import { PostcodeValidator } from '../PostcodeValidator/PostcodeValidator';
@@ -45,8 +46,16 @@ export class Product extends React.Component {
 		});
 	};
 
+	getParsedQueryString = () => {
+		return queryString.parse(this.props.location.search);
+	};
+
 	shouldSkipValidation = () => {
-		return this.props.location.search.indexOf('skip') !== -1 ? true : false;
+		return this.getParsedQueryString().skip !== 'undefined' ? true : false;
+	};
+
+	getInitialQty = () => {
+		return this.getParsedQueryString().qty;
 	};
 
 	componentWillUpdate(nextProps, nextState) {
@@ -98,7 +107,7 @@ export class Product extends React.Component {
 									)}
 
 								{(this.state.isDeliverable || this.shouldSkipValidation()) && (
-									<ProductHolder />
+									<ProductHolder initialQty={this.getInitialQty()} />
 								)}
 
 								{!this.state.isValid &&

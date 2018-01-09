@@ -12,6 +12,7 @@
     "gatsby-plugin-sass": "^1.0.15",
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-json": "^1.0.14",
+    "query-string": "^5.0.1",
     "react-ga": "^2.4.0",
     "react-typist": "^2.0.4",
     "react-visibility-sensor": "^3.11.0"
