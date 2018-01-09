@@ -10,14 +10,13 @@ export class ProductHolder extends React.Component {
 
 		this.buyButton = null;
 		this.qtyInput = null;
-		this.minQty = 2;
 		this.Product = null;
 
 		this.state = { isBelowMin: false };
 	}
 
 	onInputChange = event => {
-		if (Number(event.target.value) >= this.minQty) {
+		if (Number(event.target.value) >= this.props.minQty) {
 			this.buyButton.removeAttribute('disabled');
 			this.setState({ isBelowMin: false });
 		} else {
@@ -27,7 +26,7 @@ export class ProductHolder extends React.Component {
 	};
 
 	afterShopifyInit = component => {
-		this.Product.selectedQuantity = this.minQty;
+		this.Product.selectedQuantity = this.props.initialQty;
 
 		this.buyButton = component.node.querySelector('.shopify-buy__btn');
 		this.qtyInput = component.node.querySelector('.shopify-buy__quantity');
@@ -40,8 +39,8 @@ export class ProductHolder extends React.Component {
 	};
 
 	afterShopifyRender = component => {
-		if (this.Product.selectedQuantity < this.minQty) {
-			this.Product.selectedQuantity = this.minQty;
+		if (this.Product.selectedQuantity < this.props.minQty) {
+			this.Product.selectedQuantity = this.props.minQty;
 		}
 	};
 
@@ -102,10 +101,15 @@ export class ProductHolder extends React.Component {
 				</div>
 				{this.state.isBelowMin && (
 					<p className="postcode-message message-qty">
-						The minimum order quantity is 2.
+						The minimum order quantity is {this.props.minQty}.
 					</p>
 				)}
 			</div>
 		);
 	}
 }
+
+ProductHolder.defaultProps = {
+	minQty: 2,
+	initialQty: 2,
+};
