@@ -1,20 +1,20 @@
-import React from 'react'
-import Typist from 'react-typist'
+import React from 'react';
+import Typist from 'react-typist';
 
 export class Typewriter extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
 
-		this.state = { typing: true, counter: 0 }
+		this.state = { typing: true, counter: 0 };
 	}
 
 	handleDone = () => {
 		this.setState({ typing: false }, () => {
 			this.setState(prevState => {
-				return { typing: true, counter: prevState.counter + 1 }
-			})
-		})
-	}
+				return { typing: true, counter: prevState.counter + 1 };
+			});
+		});
+	};
 
 	render() {
 		const typewriter = (
@@ -33,12 +33,12 @@ export class Typewriter extends React.Component {
 								<Typist.Backspace count={text.length + 1} delay={750} />
 								<Typist.Delay ms={250} />
 							</span>
-						)
+						);
 					})}
 				</Typist>{' '}
 			</span>
-		)
+		);
 
-		return this.state.typing ? typewriter : null
+		return this.state.typing ? typewriter : null;
 	}
 }

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import { FakeImg } from '../FakeImg/FakeImg'
+import { FakeImg } from '../FakeImg/FakeImg';
 
 export function Banner({ img, mobileImg }) {
 	return (
@@ -8,5 +8,5 @@ export function Banner({ img, mobileImg }) {
 			<FakeImg className="banner-img -small -three-x-two" img={mobileImg} />
 			<FakeImg className="banner-img -medium -sixteen-x-seven" img={img} />
 		</div>
-	)
+	);
 }

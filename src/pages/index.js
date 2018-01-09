@@ -1,19 +1,19 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from 'react';
+import Link from 'gatsby-link';
 
-import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags'
-import { Section } from '../components/Section/Section'
-import { Product } from '../components/Product/Product'
-import { Contact } from '../components/Contact/Contact'
-import { Typewriter } from '../components/Typewriter/Typewriter'
-import { Banner } from '../components/Banner/Banner'
-import { FakeImg } from '../components/FakeImg/FakeImg'
+import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags';
+import { Section } from '../components/Section/Section';
+import { Product } from '../components/Product/Product';
+import { Contact } from '../components/Contact/Contact';
+import { Typewriter } from '../components/Typewriter/Typewriter';
+import { Banner } from '../components/Banner/Banner';
+import { FakeImg } from '../components/FakeImg/FakeImg';
 
-import img1 from '../images/img-1.jpg'
-import img2 from '../images/img-2.jpg'
-import ritaImg from '../images/rita.jpg'
-import bannerImg from '../images/banner.jpg'
-import bannerMobileImg from '../images/banner-mobile.jpg'
+import img1 from '../images/img-1.jpg';
+import img2 from '../images/img-2.jpg';
+import ritaImg from '../images/rita.jpg';
+import bannerImg from '../images/banner.jpg';
+import bannerMobileImg from '../images/banner-mobile.jpg';
 
 function IndexPage({ data, location }) {
 	return (
@@ -33,7 +33,7 @@ function IndexPage({ data, location }) {
 								'balls.',
 								'rolls.',
 								'puffs.',
-								'goodness.',
+								'goodness.'
 							]}
 						/>
 					</h1>
@@ -146,7 +146,7 @@ function IndexPage({ data, location }) {
 				<Contact />
 			</Section>
 		</div>
-	)
+	);
 }
 
 export const pageQuery = graphql`
@@ -168,6 +168,6 @@ export const pageQuery = graphql`
 			}
 		}
 	}
-`
+`;
 
-export default IndexPage
+export default IndexPage;

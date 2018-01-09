@@ -1,16 +1,16 @@
-import React from 'react'
-import VisibilitySensor from 'react-visibility-sensor'
+import React from 'react';
+import VisibilitySensor from 'react-visibility-sensor';
 
 export class FakeImg extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
 
-		this.state = { inView: false }
+		this.state = { inView: false };
 	}
 
 	handleChange = isVisible => {
-		this.setState({ inView: isVisible })
-	}
+		this.setState({ inView: isVisible });
+	};
 
 	render() {
 		return (
@@ -25,6 +25,6 @@ export class FakeImg extends React.Component {
 					style={{ backgroundImage: `url(${this.props.img})` }}
 				/>
 			</VisibilitySensor>
-		)
+		);
 	}
 }

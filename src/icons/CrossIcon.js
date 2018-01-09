@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export function CrossIcon() {
 	return (
@@ -14,5 +14,5 @@ export function CrossIcon() {
 			strokeWidth="2">
 			<path d="M2 30L30 2m0 28L2 2" />
 		</svg>
-	)
+	);
 }

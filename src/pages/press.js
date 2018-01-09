@@ -1,19 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags'
-import { Section } from '../components/Section/Section'
-import { Contact } from '../components/Contact/Contact'
-import { Banner } from '../components/Banner/Banner'
+import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags';
+import { Section } from '../components/Section/Section';
+import { Contact } from '../components/Contact/Contact';
+import { Banner } from '../components/Banner/Banner';
 
-import fullWidthImageDarkImg from '../images/full-width-image-dark.jpg'
-import eveningStandardImg from '../images/press-logos/evening-standard.png'
-import timeoutImg from '../images/press-logos/timeout.png'
-import theSundayTimesImg from '../images/press-logos/the-sunday-times.png'
-import viceImg from '../images/press-logos/vice.png'
-import msnImg from '../images/press-logos/msn.png'
-import londonistImg from '../images/press-logos/londonist.png'
-import munchiesImg from '../images/press-logos/munchies.png'
-import metroImg from '../images/press-logos/metro.png'
+import fullWidthImageDarkImg from '../images/full-width-image-dark.jpg';
+import eveningStandardImg from '../images/press-logos/evening-standard.png';
+import timeoutImg from '../images/press-logos/timeout.png';
+import theSundayTimesImg from '../images/press-logos/the-sunday-times.png';
+import viceImg from '../images/press-logos/vice.png';
+import msnImg from '../images/press-logos/msn.png';
+import londonistImg from '../images/press-logos/londonist.png';
+import munchiesImg from '../images/press-logos/munchies.png';
+import metroImg from '../images/press-logos/metro.png';
 
 function PressPage() {
 	return (
@@ -113,7 +113,7 @@ function PressPage() {
 			</div>
 			<Contact />
 		</div>
-	)
+	);
 }
 
-export default PressPage
+export default PressPage;

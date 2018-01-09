@@ -1,27 +1,27 @@
-import React from 'react'
-import ReactGA from 'react-ga'
-import queryString from 'query-string'
+import React from 'react';
+import ReactGA from 'react-ga';
+import queryString from 'query-string';
 
-import { ProductHolder } from './ProductHolder'
-import { PostcodeValidator } from '../PostcodeValidator/PostcodeValidator'
+import { ProductHolder } from './ProductHolder';
+import { PostcodeValidator } from '../PostcodeValidator/PostcodeValidator';
 
-import productImg from '../../images/product.png'
+import productImg from '../../images/product.png';
 
 export class Product extends React.Component {
 	constructor(props) {
-		super(props)
+		super(props);
 
 		this.state = {
 			counter: 0,
 			postcode: '',
 			outcode: '',
 			isValid: false,
-			isDeliverable: false,
-		}
+			isDeliverable: false
+		};
 	}
 
 	handleValidPostcode = (postcode, outcode) => {
-		const isDeliverable = this.props.postcodes.indexOf(outcode) > -1
+		const isDeliverable = this.props.postcodes.indexOf(outcode) > -1;
 
 		this.setState(prevState => {
 			return {
@@ -29,10 +29,10 @@ export class Product extends React.Component {
 				postcode,
 				outcode,
 				isValid: true,
-				isDeliverable,
-			}
-		})
-	}
+				isDeliverable
+			};
+		});
+	};
 
 	handleInvalidPostcode = postcode => {
 		this.setState(prevState => {
@@ -41,30 +41,30 @@ export class Product extends React.Component {
 				postcode,
 				outcode: '',
 				isValid: false,
-				isDeliverable: false,
-			}
-		})
-	}
+				isDeliverable: false
+			};
+		});
+	};
 
 	getParsedQueryString = () => {
-		return queryString.parse(this.props.location.search)
-	}
+		return queryString.parse(this.props.location.search);
+	};
 
 	shouldSkipValidation = () => {
-		return this.getParsedQueryString().skip !== undefined ? true : false
-	}
+		return this.getParsedQueryString().skip !== undefined ? true : false;
+	};
 
 	getInitialQty = () => {
-		return this.getParsedQueryString().qty
-	}
+		return this.getParsedQueryString().qty;
+	};
 
 	componentWillUpdate(nextProps, nextState) {
 		if (nextState.isValid && process.env.NODE_ENV !== 'development') {
 			ReactGA.event({
 				category: 'Postcode',
 				action: nextState.isDeliverable ? 'deliverable' : 'undeliverable',
-				label: nextState.outcode,
-			})
+				label: nextState.outcode
+			});
 		}
 	}
 
@@ -209,6 +209,6 @@ export class Product extends React.Component {
 					</div>
 				</div>
 			</div>
-		)
+		);
 	}
 }
