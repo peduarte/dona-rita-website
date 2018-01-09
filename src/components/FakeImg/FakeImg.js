@@ -17,8 +17,7 @@ export class FakeImg extends React.Component {
 			<VisibilitySensor
 				onChange={this.handleChange}
 				partialVisibility
-				active={!this.state.inView}
-			>
+				active={!this.state.inView}>
 				<div
 					className={`fake-img ${this.props.className} ${
 						this.state.inView ? 'is-loaded' : ''

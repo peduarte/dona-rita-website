@@ -25,8 +25,7 @@ export class Typewriter extends React.Component {
 					stdTypingDelay={50}
 					avgTypingDelay={120}
 					cursor={{ show: false }}
-					onTypingDone={this.handleDone}
-				>
+					onTypingDone={this.handleDone}>
 					{this.props.texts.map(text => {
 						return (
 							<span key={text}>

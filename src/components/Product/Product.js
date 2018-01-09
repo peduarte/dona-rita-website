@@ -16,7 +16,7 @@ export class Product extends React.Component {
 			postcode: '',
 			outcode: '',
 			isValid: false,
-			isDeliverable: false,
+			isDeliverable: false
 		};
 	}
 
@@ -29,7 +29,7 @@ export class Product extends React.Component {
 				postcode,
 				outcode,
 				isValid: true,
-				isDeliverable,
+				isDeliverable
 			};
 		});
 	};
@@ -41,7 +41,7 @@ export class Product extends React.Component {
 				postcode,
 				outcode: '',
 				isValid: false,
-				isDeliverable: false,
+				isDeliverable: false
 			};
 		});
 	};
@@ -63,7 +63,7 @@ export class Product extends React.Component {
 			ReactGA.event({
 				category: 'Postcode',
 				action: nextState.isDeliverable ? 'deliverable' : 'undeliverable',
-				label: nextState.outcode,
+				label: nextState.outcode
 			});
 		}
 	}
@@ -128,8 +128,7 @@ export class Product extends React.Component {
 												name="mc-embedded-subscribe-form"
 												className="delivery-interest-form"
 												target="_blank"
-												noValidate
-											>
+												noValidate>
 												<h4>Sorry, we don't deliver there.</h4>
 												<p>
 													But we’re expanding fast! To vote for your area, enter
@@ -162,8 +161,7 @@ export class Product extends React.Component {
 												{/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
 												<div
 													style={{ position: 'absolute', left: '-5000px' }}
-													aria-hidden="true"
-												>
+													aria-hidden="true">
 													<input
 														type="text"
 														name="b_eacce3d5004edba44cd8a399b_23c2a13999"
@@ -199,8 +197,7 @@ export class Product extends React.Component {
 															href={`https://www.google.com/maps/dir/?api=1&destination=${
 																shop.node.postCode
 															}`}
-															target="_blank"
-														>
+															target="_blank">
 															View on map
 														</a>
 													</div>

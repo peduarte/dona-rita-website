@@ -33,7 +33,7 @@ function IndexPage({ data, location }) {
 								'balls.',
 								'rolls.',
 								'puffs.',
-								'goodness.',
+								'goodness.'
 							]}
 						/>
 					</h1>

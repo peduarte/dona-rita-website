@@ -12,18 +12,18 @@ export function shopifyOptions(afterInitCb, afterRenderCb) {
 				description: false,
 				button: true,
 				quantity: true,
-				options: false, // Hide variants
+				options: false // Hide variants
 			},
 			text: {
-				button: 'Buy me',
+				button: 'Buy me'
 			},
 			events: {
 				afterInit: afterInitCb,
-				afterRender: afterRenderCb,
-			},
+				afterRender: afterRenderCb
+			}
 		},
 		cart: {
-			popup: false,
-		},
+			popup: false
+		}
 	};
 }

@@ -23,8 +23,7 @@ function Stockist({ className, shop }) {
 				<a
 					href="https://www.google.com/maps/dir/?api=1&destination={ shop.postCode }"
 					className="small faded"
-					target="_blank"
-				>
+					target="_blank">
 					View on map
 				</a>
 			</div>
@@ -75,8 +74,7 @@ function StockistsPage({ data }) {
 					<a
 						className="button"
 						href="./product-request-form.pdf"
-						target="_blank"
-					>
+						target="_blank">
 						Get request form
 					</a>
 				</div>

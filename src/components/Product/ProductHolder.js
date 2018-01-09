@@ -49,7 +49,7 @@ export class ProductHolder extends React.Component {
 			id: [9367035273],
 			node: document.getElementById('product-inject'),
 			moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
-			options: shopifyOptions(this.afterShopifyInit, this.afterShopifyRender),
+			options: shopifyOptions(this.afterShopifyInit, this.afterShopifyRender)
 		});
 
 		// 💩 everytime `ui.createComponent` is called is adds a new product to
@@ -67,7 +67,7 @@ export class ProductHolder extends React.Component {
 			const client = window.ShopifyBuy.buildClient({
 				domain: 'dona-rita.myshopify.com',
 				apiKey: '260e658ec8cdc689ca1342a79adba733',
-				appId: '6',
+				appId: '6'
 			});
 
 			ShopifyBuy.UI.onReady(client).then(ui => this.shopifyReady(ui));
@@ -111,5 +111,5 @@ export class ProductHolder extends React.Component {
 
 ProductHolder.defaultProps = {
 	minQty: 2,
-	initialQty: 2,
+	initialQty: 2
 };

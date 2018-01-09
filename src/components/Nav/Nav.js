@@ -20,8 +20,7 @@ export class Nav extends React.Component {
 				className={link.to === '/buy' ? 'button' : ''}
 				to={link.to}
 				title={link.name}
-				onClick={onClick}
-			>
+				onClick={onClick}>
 				{link.name}
 			</Link>
 		));
@@ -33,7 +32,7 @@ export class Nav extends React.Component {
 			{ name: 'Story', to: '/story' },
 			{ name: 'Press', to: '/press' },
 			{ name: 'Stockists', to: '/stockists' },
-			{ name: 'Buy online', to: '/buy' },
+			{ name: 'Buy online', to: '/buy' }
 		];
 		return (
 			<div className="grid">
@@ -45,8 +44,7 @@ export class Nav extends React.Component {
 					id="mobile-nav"
 					className={`main-nav -mobile ${
 						this.state.isOpened ? 'is-opened' : null
-					}`}
-				>
+					}`}>
 					<a className="mobile-menu -close" onClick={this.handleClose}>
 						<CrossIcon />
 					</a>

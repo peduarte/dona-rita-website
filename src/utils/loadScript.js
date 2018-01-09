@@ -5,7 +5,7 @@ export function loadScript(url) {
 				async: true,
 				src: url,
 				onload: resolve,
-				onerror: reject,
+				onerror: reject
 			})
 		)
 	);

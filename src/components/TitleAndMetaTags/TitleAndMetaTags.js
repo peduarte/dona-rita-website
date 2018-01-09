@@ -31,5 +31,5 @@ TitleAndMetaTags.defaultProps = {
 	url: 'https://donarita.co.uk',
 	pathname: '',
 	title: 'Dona Rita',
-	description: 'Brazilian cheese bread. Pão de Queijo.',
+	description: 'Brazilian cheese bread. Pão de Queijo.'
 };
