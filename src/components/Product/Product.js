@@ -51,7 +51,7 @@ export class Product extends React.Component {
 	};
 
 	shouldSkipValidation = () => {
-		return this.getParsedQueryString().skip !== 'undefined' ? true : false;
+		return this.getParsedQueryString().skip !== undefined ? true : false;
 	};
 
 	getInitialQty = () => {
