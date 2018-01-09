@@ -1,0 +1,15 @@
+{
+	"extends": [
+		"fbjs",
+		"eslint:recommended",
+		"prettier"
+	],
+	"plugins": [
+		"prettier",
+		"react"
+	],
+	"parser": "babel-eslint",
+	"rules": {
+		"relay/graphql-naming": 0
+	}
+}

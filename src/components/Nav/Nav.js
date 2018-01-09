@@ -36,7 +36,7 @@ export class Nav extends React.Component {
 		];
 		return (
 			<div className="grid">
-				<a className="mobile-menu -open" onClick={this.handleOpen}>
+				<a className="mobile-menu -open" onClick={this.handleOpen} role="button" tabIndex={0}>
 					<BurgerIcon />
 				</a>
 
@@ -44,8 +44,8 @@ export class Nav extends React.Component {
 					id="mobile-nav"
 					className={`main-nav -mobile ${
 						this.state.isOpened ? 'is-opened' : null
-					}`}>
-					<a className="mobile-menu -close" onClick={this.handleClose}>
+						}`}>
+					<a className="mobile-menu -close" onClick={this.handleClose} role="button" tabIndex={0}>
 						<CrossIcon />
 					</a>
 					{this.renderLinks(links, this.handleClose)}

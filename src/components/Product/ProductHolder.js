@@ -70,7 +70,7 @@ export class ProductHolder extends React.Component {
 				appId: '6'
 			});
 
-			ShopifyBuy.UI.onReady(client).then(ui => this.shopifyReady(ui));
+			window.ShopifyBuy.UI.onReady(client).then(ui => this.shopifyReady(ui));
 		};
 
 		if (window.ShopifyBuy && window.ShopifyBuy.UI) {
@@ -79,7 +79,7 @@ export class ProductHolder extends React.Component {
 			loadScript(
 				'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js'
 			).then(shopifyBuyInit, error => {
-				console.log(`Failed to load script: ${error}`);
+				throw new Error(`Failed to load script: ${error}`);
 			});
 		}
 	}

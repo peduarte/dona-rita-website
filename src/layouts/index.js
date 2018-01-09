@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
 
@@ -26,7 +25,7 @@ export default class TemplateWrapper extends React.Component {
 	}
 
 	render() {
-		const { title, children } = this.props;
+		const { children } = this.props;
 		return (
 			<div>
 				<Helmet>
