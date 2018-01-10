@@ -29,6 +29,7 @@ function BuyPage({ data, location }) {
 	);
 }
 
+// eslint-disable-next-line no-undef
 export const pageQuery = graphql`
 	query allStockistsBuyQueryAndAllPostcodesBuyQuery {
 		allPostcodesJson {

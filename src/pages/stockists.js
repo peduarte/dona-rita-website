@@ -116,6 +116,7 @@ function StockistsPage({ data }) {
 	);
 }
 
+// eslint-disable-next-line no-undef
 export const pageQuery = graphql`
 	query allStockistsQuery {
 		group1: allStockistsJson(limit: 3) {

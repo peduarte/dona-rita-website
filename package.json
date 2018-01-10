@@ -1,31 +1,49 @@
 {
-  "name": "dona-rita-website",
-  "description": "Dona Rita Website",
-  "version": "1.0.0",
-  "author": "Pedro Duarte <contact@peduarte.com>",
-  "dependencies": {
-    "gatsby": "^1.9.150",
-    "gatsby-link": "^1.6.33",
-    "gatsby-plugin-netlify": "^1.0.12",
-    "gatsby-plugin-nprogress": "^1.0.9",
-    "gatsby-plugin-react-helmet": "^2.0.3",
-    "gatsby-plugin-sass": "^1.0.15",
-    "gatsby-source-filesystem": "^1.5.11",
-    "gatsby-transformer-json": "^1.0.14",
-    "query-string": "^5.0.1",
-    "react-ga": "^2.4.0",
-    "react-helmet": "^5.2.0",
-    "react-typist": "^2.0.4",
-    "react-visibility-sensor": "^3.11.0"
-  },
-  "main": "n/a",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --config .prettierrc --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "devDependencies": {
-    "prettier": "^1.9.2"
-  }
+	"name": "dona-rita-website",
+	"description": "Dona Rita Website",
+	"version": "1.0.0",
+	"author": "Pedro Duarte <contact@peduarte.com>",
+	"dependencies": {
+		"gatsby": "^1.9.150",
+		"gatsby-link": "^1.6.33",
+		"gatsby-plugin-netlify": "^1.0.12",
+		"gatsby-plugin-nprogress": "^1.0.9",
+		"gatsby-plugin-react-helmet": "^2.0.3",
+		"gatsby-plugin-sass": "^1.0.15",
+		"gatsby-source-filesystem": "^1.5.11",
+		"gatsby-transformer-json": "^1.0.14",
+		"query-string": "^5.0.1",
+		"react-ga": "^2.4.0",
+		"react-helmet": "^5.2.0",
+		"react-typist": "^2.0.4",
+		"react-visibility-sensor": "^3.11.0"
+	},
+	"main": "n/a",
+	"scripts": {
+		"build": "gatsby build",
+		"develop": "gatsby develop",
+		"diff": "prettier --config .prettierrc --list-different \"src/**/*.js\"",
+		"format": "prettier --config .prettierrc --write \"src/**/*.js\"",
+		"test": "eslint .",
+		"precommit": "lint-staged",
+		"prepush": "yarn test"
+	},
+	"lint-staged": {
+		"*.{js,jsx}": ["prettier --config .prettierrc --write", "git add"]
+	},
+	"devDependencies": {
+		"babel-eslint": "^8.2.1",
+		"eslint": "^4.15.0",
+		"eslint-config-fbjs": "^2.0.1",
+		"eslint-config-prettier": "^2.9.0",
+		"eslint-plugin-babel": "^4.1.2",
+		"eslint-plugin-flowtype": "^2.41.0",
+		"eslint-plugin-jsx-a11y": "^6.0.3",
+		"eslint-plugin-prettier": "^2.4.0",
+		"eslint-plugin-react": "^7.5.1",
+		"eslint-plugin-relay": "^0.0.20",
+		"husky": "^0.14.3",
+		"lint-staged": "^6.0.0",
+		"prettier": "^1.9.2"
+	}
 }
