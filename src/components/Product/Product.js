@@ -182,7 +182,7 @@ export class Product extends React.Component {
 											</h4>
 											{this.props.stockists
 												.filter(
-												shop => shop.node.name === 'Portobello Wholefoods'
+													shop => shop.node.name === 'Portobello Wholefoods'
 												)
 												.map(shop => (
 													<div>
@@ -196,7 +196,7 @@ export class Product extends React.Component {
 														<a
 															href={`https://www.google.com/maps/dir/?api=1&destination=${
 																shop.node.postCode
-																}`}
+															}`}
 															target="_blank">
 															View on map
 														</a>
