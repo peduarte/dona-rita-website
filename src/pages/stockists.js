@@ -21,7 +21,9 @@ function Stockist({ className, shop }) {
 					{shop.postCode}
 				</address>
 				<a
-					href="https://www.google.com/maps/dir/?api=1&destination={ shop.postCode }"
+					href={`https://www.google.com/maps/dir/?api=1&destination=${
+						shop.postCode
+					}`}
 					className="small faded"
 					target="_blank">
 					View on map
