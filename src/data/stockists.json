@@ -42,6 +42,13 @@
 	},
 
 	{
+		"name": "Harringay Local Store",
+		"area": "Harringay",
+		"address": "581C Green Lanes",
+		"postCode": "N8 0RG"
+	},
+
+	{
 		"name": "Portobello Wholefoods",
 		"area": "Notting Hill",
 		"address": "266 Portobello Rd",
