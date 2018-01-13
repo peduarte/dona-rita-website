@@ -33,11 +33,18 @@ function Stockist({ className, shop }) {
 	);
 }
 
-function StockistsPage({ data }) {
+const createGroupedArray = function(arr, chunkSize) {
 	const groups = [];
-	for (let group in data) {
-		groups.push(data[group]);
+	let i;
+
+	for (i = 0; i < arr.length; i += chunkSize) {
+		groups.push(arr.slice(i, i + chunkSize));
 	}
+	return groups;
+};
+
+function StockistsPage({ data }) {
+	const groupedData = createGroupedArray(data.allStockistsJson.edges, 3);
 
 	return (
 		<div className="main">
@@ -52,21 +59,17 @@ function StockistsPage({ data }) {
 					</h1>
 				</div>
 
-				{groups.map((group, index) => {
-					return (
-						<div className="grid stockist-list" key={`group-${index}`}>
-							{group.edges.map((shop, index) => {
-								return (
-									<Stockist
-										key={shop.node.name}
-										shop={shop.node}
-										className={index === 0 ? 'md-push-2 lg-push-3' : ''}
-									/>
-								);
-							})}
-						</div>
-					);
-				})}
+				{groupedData.map((group, index) => (
+					<div key={`group-${index}`} className="grid stockist-list">
+						{group.map((shop, index) => (
+							<Stockist
+								key={shop.node.name}
+								shop={shop.node}
+								className={index === 0 ? 'md-push-2 lg-push-3' : ''}
+							/>
+						))}
+					</div>
+				))}
 			</Section>
 
 			<Section className="-blue center">
@@ -120,27 +123,15 @@ function StockistsPage({ data }) {
 
 // eslint-disable-next-line no-undef
 export const pageQuery = graphql`
-	query allStockistsQuery {
-		group1: allStockistsJson(limit: 3) {
-			...mutualFields
-		}
-
-		group2: allStockistsJson(limit: 3, skip: 3) {
-			...mutualFields
-		}
-
-		group3: allStockistsJson(limit: 3, skip: 6) {
-			...mutualFields
-		}
-	}
-
-	fragment mutualFields on StockistsJsonConnection {
-		edges {
-			node {
-				name
-				area
-				address
-				postCode
+	query stockistsPageQuery {
+		allStockistsJson {
+			edges {
+				node {
+					name
+					area
+					address
+					postCode
+				}
 			}
 		}
 	}
