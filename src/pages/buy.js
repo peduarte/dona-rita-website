@@ -45,6 +45,7 @@ export const pageQuery = graphql`
 					name
 					address
 					postCode
+					outcode
 				}
 			}
 		}

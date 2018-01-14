@@ -3,55 +3,63 @@
 		"name": "Eat 17 Walthamstow",
 		"area": "Walthamstow",
 		"address": "28-30 Orford Rd",
-		"postCode": "E17 9NJ"
+		"postCode": "E17 9NJ",
+		"outcode": "E17"
 	},
 
 	{
 		"name": "Eat 17 Hackney",
 		"area": "Clapton",
 		"address": "64-66 Brooksby's Walk",
-		"postCode": "E9 6DA"
+		"postCode": "E9 6DA",
+		"outcode": "E9"
 	},
 
 	{
 		"name": "The Deli Downstairs",
 		"area": "Victoria Park Village",
 		"address": "211 Victoria Park Rd",
-		"postCode": "E9 7JN"
+		"postCode": "E9 7JN",
+		"outcode": "E9"
 	},
 
 	{
 		"name": "The Grocery",
 		"area": "Shoreditch",
 		"address": "52-56 Kingsland Rd",
-		"postCode": "E2 8DP"
+		"postCode": "E2 8DP",
+		"outcode": "E2"
 	},
 
 	{
 		"name": "Raw Store",
 		"area": "Shoreditch",
 		"address": "343 Old St",
-		"postCode": "EC1V 9LL"
+		"postCode": "EC1V 9LL",
+		"outcode": "EC1V"
 	},
 
 	{
 		"name": "Pickles of London",
 		"area": "Dalston",
 		"address": "45 Kingsland High St",
-		"postCode": "E8 2JS"
+		"postCode": "E8 2JS",
+		"outcode": "E8"
 	},
 
 	{
 		"name": "Harringay Local Store",
 		"area": "Harringay",
 		"address": "581C Green Lanes",
-		"postCode": "N8 0RG"
+		"postCode": "N8 0RG",
+		"outcode": "N8"
 	},
 
 	{
 		"name": "Portobello Wholefoods",
 		"area": "Notting Hill",
 		"address": "266 Portobello Rd",
-		"postCode": "W10 5TY"
+		"postCode": "W10 5TY",
+		"outcode": "W10"
 	}
 ]
