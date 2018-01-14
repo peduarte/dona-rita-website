@@ -4,15 +4,72 @@ import queryString from 'query-string';
 
 import { ProductHolder } from './ProductHolder';
 import { PostcodeValidator } from '../PostcodeValidator/PostcodeValidator';
+import { ShopRecommendation } from '../ShopRecommendation/ShopRecommendation';
 
 import productImg from '../../images/product.png';
+
+function SignUpForm({ postcode, outcode }) {
+	return (
+		<div className="postcode-message postcode-nope">
+			<form
+				action="//donarita.us16.list-manage.com/subscribe/post?u=eacce3d5004edba44cd8a399b&amp;id=23c2a13999"
+				method="post"
+				id="mc-embedded-subscribe-form"
+				name="mc-embedded-subscribe-form"
+				className="delivery-interest-form"
+				target="_blank"
+				noValidate>
+				<h4>Sorry, we don't deliver there.</h4>
+				<p>
+					But we’re expanding fast! To vote for your area, enter your email
+					address.
+				</p>
+				<div className="mc-field-group">
+					<input
+						type="email"
+						placeholder="Your email address"
+						name="EMAIL"
+						id="mce-EMAIL"
+					/>
+					<input
+						type="text"
+						value={postcode}
+						name="POSTCODE"
+						id="mce-POSTCODE"
+						hidden
+					/>
+					<input
+						type="text"
+						value={outcode}
+						name="OUTCODE"
+						id="mce-OUTCODE"
+						hidden
+					/>
+					<button id="delivery-form-button">Vote</button>
+				</div>
+
+				{/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
+				<div
+					style={{ position: 'absolute', left: '-5000px' }}
+					aria-hidden="true">
+					<input
+						type="text"
+						name="b_eacce3d5004edba44cd8a399b_23c2a13999"
+						tabIndex="-1"
+						value=""
+					/>
+				</div>
+			</form>
+		</div>
+	);
+}
 
 export class Product extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			counter: 0,
+			userHasInteracted: false,
 			postcode: '',
 			outcode: '',
 			isValid: false,
@@ -25,7 +82,7 @@ export class Product extends React.Component {
 
 		this.setState(prevState => {
 			return {
-				counter: prevState.counter + 1,
+				userHasInteracted: true,
 				postcode,
 				outcode,
 				isValid: true,
@@ -37,7 +94,7 @@ export class Product extends React.Component {
 	handleInvalidPostcode = postcode => {
 		this.setState(prevState => {
 			return {
-				counter: prevState.counter + 1,
+				userHasInteracted: true,
 				postcode,
 				outcode: '',
 				isValid: false,
@@ -111,97 +168,24 @@ export class Product extends React.Component {
 								)}
 
 								{!this.state.isValid &&
-									this.state.counter > 0 && (
-										<p className="postcode-message postcode-wrong">
+									this.state.userHasInteracted && (
+										<p className="postcode-message">
 											Please enter a valid postcode.
 										</p>
 									)}
 
 								{this.state.isValid &&
 									!this.state.isDeliverable &&
-									this.state.counter > 0 && (
-										<div className="postcode-message postcode-nope">
-											<form
-												action="//donarita.us16.list-manage.com/subscribe/post?u=eacce3d5004edba44cd8a399b&amp;id=23c2a13999"
-												method="post"
-												id="mc-embedded-subscribe-form"
-												name="mc-embedded-subscribe-form"
-												className="delivery-interest-form"
-												target="_blank"
-												noValidate>
-												<h4>Sorry, we don't deliver there.</h4>
-												<p>
-													But we’re expanding fast! To vote for your area, enter
-													your email address.
-												</p>
-												<div className="mc-field-group">
-													<input
-														type="email"
-														placeholder="Your email address"
-														name="EMAIL"
-														id="mce-EMAIL"
-													/>
-													<input
-														type="text"
-														value={this.state.postcode}
-														name="POSTCODE"
-														id="mce-POSTCODE"
-														hidden
-													/>
-													<input
-														type="text"
-														value={this.state.outcode}
-														name="OUTCODE"
-														id="mce-OUTCODE"
-														hidden
-													/>
-													<button id="delivery-form-button">Vote</button>
-												</div>
-
-												{/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
-												<div
-													style={{ position: 'absolute', left: '-5000px' }}
-													aria-hidden="true">
-													<input
-														type="text"
-														name="b_eacce3d5004edba44cd8a399b_23c2a13999"
-														tabIndex="-1"
-														value=""
-													/>
-												</div>
-											</form>
-										</div>
-									)}
-
-								{this.state.isValid &&
-									this.state.outcode === 'W10' && (
-										<div className="postcode-message postcode-shop">
-											<h4>
-												🎉 Head down to your nearest store to buy your frozen
-												pack.
-											</h4>
-											{this.props.stockists
-												.filter(
-													shop => shop.node.name === 'Portobello Wholefoods'
-												)
-												.map(shop => (
-													<div>
-														<address>
-															{shop.node.name}
-															<br />
-															{shop.node.address}
-															<br />
-															{shop.node.postCode}
-														</address>
-														<a
-															href={`https://www.google.com/maps/dir/?api=1&destination=${
-																shop.node.postCode
-															}`}
-															target="_blank">
-															View on map
-														</a>
-													</div>
-												))}
+									this.state.userHasInteracted && (
+										<div>
+											<SignUpForm
+												postcode={this.state.postcode}
+												outcode={this.state.outcode}
+											/>
+											<ShopRecommendation
+												stockists={this.props.stockists}
+												outcode={this.state.outcode}
+											/>
 										</div>
 									)}
 							</div>
