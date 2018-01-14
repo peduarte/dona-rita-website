@@ -6,6 +6,8 @@ import { Contact } from '../components/Contact/Contact';
 import { FakeImg } from '../components/FakeImg/FakeImg';
 import { Banner } from '../components/Banner/Banner';
 
+import { createGroupedArray } from '../utils/createGroupedArray';
+
 import stockImg from '../images/stock.jpg';
 import fullWidthImageTwoHandsImg from '../images/full-width-image-twohands.jpg';
 
@@ -32,16 +34,6 @@ function Stockist({ className, shop }) {
 		</div>
 	);
 }
-
-const createGroupedArray = function(arr, chunkSize) {
-	const groups = [];
-	let i;
-
-	for (i = 0; i < arr.length; i += chunkSize) {
-		groups.push(arr.slice(i, i + chunkSize));
-	}
-	return groups;
-};
 
 function StockistsPage({ data }) {
 	const groupedData = createGroupedArray(data.allStockistsJson.edges, 3);
