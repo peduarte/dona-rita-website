@@ -42,7 +42,9 @@ address {
 	}
 }
 
-.typist { display: inline-block}
+.typist {
+	display: inline-block;
+}
 
 .logo {
 	margin: 20px 0 0 20px;
@@ -56,11 +58,14 @@ address {
 	}
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
 	font-family: $fontHighlight;
 }
 
-h1, .h1 {
+h1,
+.h1 {
 	font-size: 36px;
 	line-height: 36px;
 	letter-spacing: 1px;
@@ -76,7 +81,10 @@ h1, .h1 {
 	}
 }
 
-h2, .h2, h3, .h3 {
+h2,
+.h2,
+h3,
+.h3 {
 	font-size: 20px;
 	line-height: 36px;
 	margin-top: 20px;
@@ -90,7 +98,8 @@ h2, .h2, h3, .h3 {
 	}
 }
 
-h3, .h3 {
+h3,
+.h3 {
 	margin-top: 20px;
 
 	@include medium {
@@ -109,7 +118,6 @@ p {
 a {
 	color: inherit;
 }
-
 
 .main-nav {
 	&.-mobile {
@@ -349,8 +357,9 @@ img {
 		color of the background to give it a recessed effect
 		without affecting the grid. MVP bro.
 		*/
-		&:before, &:after {
-			content: "";
+		&:before,
+		&:after {
+			content: '';
 			position: absolute;
 			background: $colorBackground;
 			width: 10px;
@@ -429,7 +438,6 @@ img {
 
 // PRESS ICONS
 .press-icons {
-
 	a {
 		display: block;
 		opacity: 0.4;
@@ -530,7 +538,7 @@ img {
 	}
 
 	&::after {
-		content: "";
+		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -545,13 +553,13 @@ img {
 	}
 
 	&.-two-x-three {
-		padding-top: (3 / 2) * 100 + unquote("%");
+		padding-top: (3 / 2) * 100 + unquote('%');
 	}
 	&.-three-x-two {
-		padding-top: (2 / 3) * 100 + unquote("%");
+		padding-top: (2 / 3) * 100 + unquote('%');
 	}
 	&.-sixteen-x-seven {
-		padding-top: (7 / 16) * 100 + unquote("%");
+		padding-top: (7 / 16) * 100 + unquote('%');
 	}
 	&.-square {
 		padding-top: 100%;
@@ -563,7 +571,6 @@ img {
 			padding-top: 0;
 		}
 	}
-
 }
 
 // BANNER
@@ -596,9 +603,9 @@ img {
 }
 
 // FORMS
-input[type="text"],
-input[type="number"],
-input[type="email"] {
+input[type='text'],
+input[type='number'],
+input[type='email'] {
 	-webkit-appearance: none;
 	appearance: none;
 	font-size: 16px;
@@ -699,6 +706,10 @@ button {
 	}
 }
 
+.postcode-shop div + div {
+	margin-top: 30px;
+}
+
 .delivery-date {
 	background-color: $colorYellow;
 	color: white;
@@ -713,7 +724,6 @@ button {
 	}
 }
 
-
 // Deliery interest form styling
 .delivery-interest-form {
 	p {
@@ -726,13 +736,12 @@ button {
 		}
 	}
 
-	input[type="email"],
+	input[type='email'],
 	button {
 		padding: 10px;
-
 	}
 
-	input[type="email"] {
+	input[type='email'] {
 		@include medium {
 			flex: 3;
 		}
@@ -784,7 +793,7 @@ button {
 	padding-top: 30px;
 
 	&:after {
-		content: "Qty:";
+		content: 'Qty:';
 		font-size: 12px;
 		line-height: 22px;
 		color: rgba(black, 0.4);
