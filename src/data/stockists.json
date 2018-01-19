@@ -1,5 +1,13 @@
 [
 	{
+		"name": "Eat 17 Hackney",
+		"area": "Clapton",
+		"address": "64-66 Brooksby's Walk",
+		"postCode": "E9 6DA",
+		"outcode": "E9"
+	},
+	
+	{
 		"name": "Eat 17 Walthamstow",
 		"area": "Walthamstow",
 		"address": "28-30 Orford Rd",
@@ -7,13 +15,6 @@
 		"outcode": "E17"
 	},
 
-	{
-		"name": "Eat 17 Hackney",
-		"area": "Clapton",
-		"address": "64-66 Brooksby's Walk",
-		"postCode": "E9 6DA",
-		"outcode": "E9"
-	},
 
 	{
 		"name": "The Deli Downstairs",
@@ -54,6 +55,14 @@
 		"postCode": "N8 0RG",
 		"outcode": "N8"
 	},
+	
+	{
+		"name": "Green & Flavour",
+		"area": "Islington",
+		"address": "453-455 Caledonian Rd",
+		"postCode": "N7 9BA",
+		"outcode": "N7"
+	},	
 
 	{
 		"name": "Portobello Wholefoods",
