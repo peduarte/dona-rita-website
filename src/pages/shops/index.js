@@ -28,6 +28,7 @@ function ShopsPage({ data }) {
 
 export default ShopsPage;
 
+// eslint-disable-next-line no-undef
 export const pageQuery = graphql`
 	query ShopsQuery {
 		allMarkdownRemark {
