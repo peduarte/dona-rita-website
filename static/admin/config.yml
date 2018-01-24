@@ -20,9 +20,21 @@ collections:
     label: "Shops"
     folder: "src/pages/shops"
     create: true
-    slug: "{{slug}}"
+    slug: "{{slug}}" #filename
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "shop-page"}
       - {label: "Path", name: "path", widget: "string", default: "shops/"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Postcode", name: "postcode", widget: "string"}
+      - {label: "List", name: "list", widget: "list"}
+  
+  - name: "postcodes"
+    label: "Postcodes"
+    files:
+      - file: "src/pages/postcodetest.json"
+        label: "PostcodeTest"
+        name: "postcodetest"
+        extension: "json"
+        format: "json"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "shop-page"}

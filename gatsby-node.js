@@ -11,11 +11,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 			) {
 				edges {
 					node {
-						id
 						frontmatter {
 							templateKey
 							path
-							title
 						}
 					}
 				}
