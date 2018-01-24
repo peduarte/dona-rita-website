@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: 'Dona Rita',
+		title: 'Dona Rita'
 	},
 	plugins: [
 		'gatsby-plugin-react-helmet',
@@ -10,16 +10,17 @@ module.exports = {
 			resolve: 'gatsby-plugin-nprogress',
 			options: {
 				color: '#f09a7a',
-				showSpinner: false,
-			},
+				showSpinner: false
+			}
 		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `data`,
-				path: `${__dirname}/src/data/`,
-			},
+				path: `${__dirname}/src/data/`
+			}
 		},
 		'gatsby-plugin-netlify',
-	],
+		'gatsby-plugin-netlify-cms'
+	]
 };
