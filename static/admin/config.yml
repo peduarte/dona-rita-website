@@ -23,5 +23,6 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "shop-page"}
-      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Path", name: "path", widget: "string", default: "shops/"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Postcode", name: "postcode", widget: "string"}

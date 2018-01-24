@@ -16,7 +16,7 @@ function ShopsPage({ data }) {
 					<div className="col">
 						{posts.map(post => (
 							<Link to={post.node.frontmatter.path}>
-								{post.node.frontmatter.title}
+								{post.node.frontmatter.title}-{post.node.frontmatter.postcode}///
 							</Link>
 						))}
 					</div>
@@ -37,6 +37,7 @@ export const pageQuery = graphql`
 					frontmatter {
 						title
 						path
+						postcode
 					}
 				}
 			}
