@@ -19,7 +19,7 @@ collections:
   - name: "shops"
     label: "Shops"
     files:
-      - file: "src/data/shops.json"
+      - file: "src/data/shops.yml"
 			  label: "Shops File"
 				name: "shops_file"
 				fields:
