@@ -1,6 +1,18 @@
 backend:
-  name: git-getaway
-  branch: master
+  name: git-gateway
+  branch: netlify-cms
 
 media_folder: static/img
 public_folder: /img
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/test/test.md"
+        label: "Test"
+        name: "test"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "test-page"}
+          - {label: "Path", name: "path", widget: "hidden", default: "/test"}
+          - {label: "Title", name: "title", widget: "string"}
