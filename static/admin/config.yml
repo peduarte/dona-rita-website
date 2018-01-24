@@ -16,3 +16,11 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "test-page"}
           - {label: "Path", name: "path", widget: "hidden", default: "/test"}
           - {label: "Title", name: "title", widget: "string"}
+  - name: "shops"
+    label: "Shops"
+    files:
+      - file: "src/data/shops.json"
+			  label: "Shops File"
+				name: "shops_file"
+				fields:
+				  - {label: "Title", name: "title", widget: "string"}
