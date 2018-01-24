@@ -1,7 +1,6 @@
 ---
-templateKey: 'test-page'
+templateKey: test-page
 path: /test
-title: Test our values
+title: Test our values auhsuahsuahsuhs
 ---
 
-#Test
