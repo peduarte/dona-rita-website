@@ -2,7 +2,7 @@ import React from 'react';
 import graphql from 'graphql';
 import Content, { HTMLContent } from '../components/Content';
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+export const ShopPageTemplate = ({ title, content, contentComponent }) => {
 	const PageContent = contentComponent || Content;
 
 	return (
@@ -27,7 +27,7 @@ export default ({ data }) => {
 	const { markdownRemark: post } = data;
 
 	return (
-		<AboutPageTemplate
+		<ShopPageTemplate
 			contentComponent={HTMLContent}
 			title={post.frontmatter.title}
 			content={post.html}
@@ -35,8 +35,8 @@ export default ({ data }) => {
 	);
 };
 
-export const aboutPageQuery = graphql`
-	query AboutPage($path: String!) {
+export const shopPageQuery = graphql`
+	query ShopPage($path: String!) {
 		markdownRemark(frontmatter: { path: { eq: $path } }) {
 			html
 			frontmatter {

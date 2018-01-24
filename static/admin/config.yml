@@ -18,9 +18,10 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
   - name: "shops"
     label: "Shops"
-    files:
-      - file: "src/data/shops.yml"
-			  label: "Shops File"
-				name: "shops_file"
-				fields:
-				  - {label: "Title", name: "title", widget: "string"}
+    folder: "src/pages/shops"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "shop-page"}
+      - {label: "Path", name: "path", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
