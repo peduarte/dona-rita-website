@@ -7,7 +7,6 @@
 		"gatsby": "^1.9.166",
 		"gatsby-link": "^1.6.34",
 		"gatsby-plugin-netlify": "^1.0.15",
-		"gatsby-plugin-netlify-cms": "^1.0.5",
 		"gatsby-plugin-nprogress": "^1.0.11",
 		"gatsby-plugin-react-helmet": "^2.0.4",
 		"gatsby-plugin-sass": "^1.0.16",
