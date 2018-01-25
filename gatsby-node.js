@@ -1,9 +1,9 @@
 const path = require('path');
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
+exports.createPages = async ({ boundActionCreators, graphql }) => {
 	const { createPage } = boundActionCreators;
 
-	return graphql(`
+	const allMarkdownQuery = await graphql(`
 		{
 			allMarkdownRemark(
 				sort: { order: DESC, fields: [frontmatter___title] }
@@ -14,29 +14,39 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 						frontmatter {
 							templateKey
 							path
+							postcode
 						}
 					}
 				}
 			}
 		}
-	`).then(result => {
-		if (result.errors) {
-			result.errors.forEach(e => console.error(e.toString()));
-			return Promise.reject(result.errors);
-		}
+	`);
 
-		return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-			const pagePath = node.frontmatter.path;
-			createPage({
-				path: pagePath,
-				component: path.resolve(
-					`src/templates/${String(node.frontmatter.templateKey)}.js`
-				),
-				// additional data can be passed via context
-				context: {
-					path: pagePath
-				}
-			});
+	if (allMarkdownQuery.errors) {
+		console.error(
+			`Error found in gatsby-node.js (allMarkdownQuery): ${
+				allMarkdownQuery.errors
+			}`
+		);
+		throw new Error(
+			`Error found in gatsby-node.js (allMarkdownQuery): ${
+				allMarkdownQuery.errors
+			}`
+		);
+	}
+
+	allMarkdownQuery.data.allMarkdownRemark.edges.forEach(({ node }) => {
+		const pagePath = node.frontmatter.path;
+
+		createPage({
+			path: pagePath,
+			component: path.resolve(
+				`src/templates/${String(node.frontmatter.templateKey)}.js`
+			),
+			// additional data can be passed via context
+			context: {
+				path: pagePath
+			}
 		});
 	});
 };
