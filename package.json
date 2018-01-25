@@ -13,6 +13,7 @@
 		"gatsby-plugin-sass": "^1.0.16",
 		"gatsby-source-filesystem": "^1.5.14",
 		"gatsby-transformer-json": "^1.0.14",
+		"gatsby-transformer-remark": "^1.7.29",
 		"query-string": "^5.0.1",
 		"react-ga": "^2.4.1",
 		"react-helmet": "^5.2.0",
