@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import Script from 'react-load-script';
 
 import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags';
 import { Section } from '../components/Section/Section';
@@ -16,26 +15,9 @@ import ritaImg from '../images/rita.jpg';
 import bannerImg from '../images/banner.jpg';
 import bannerMobileImg from '../images/banner-mobile.jpg';
 
-function handleScriptLoad() {
-	if (typeof window !== `undefined` && window.netlifyIdentity) {
-		window.netlifyIdentity.on('init', user => {
-			if (!user) {
-				window.netlifyIdentity.on('login', () => {
-					document.location.href = '/admin/';
-				});
-			}
-		});
-	}
-	window.netlifyIdentity.init();
-}
-
 function IndexPage({ data, location }) {
 	return (
 		<div className="main">
-			<Script
-				url="https://identity.netlify.com/v1/netlify-identity-widget.js"
-				onLoad={() => handleScriptLoad()}
-			/>
 			<TitleAndMetaTags />
 			<Section>
 				<div className="grid">

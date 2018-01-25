@@ -17,7 +17,6 @@
 		"query-string": "^5.0.1",
 		"react-ga": "^2.4.1",
 		"react-helmet": "^5.2.0",
-		"react-load-script": "^0.0.6",
 		"react-typist": "^2.0.4",
 		"react-visibility-sensor": "^3.11.0"
 	},
@@ -32,10 +31,7 @@
 		"prepush": "yarn test"
 	},
 	"lint-staged": {
-		"*.{js,jsx}": [
-			"prettier --config .prettierrc --write",
-			"git add"
-		]
+		"*.{js,jsx}": ["prettier --config .prettierrc --write", "git add"]
 	},
 	"devDependencies": {
 		"babel-eslint": "^8.2.1",
