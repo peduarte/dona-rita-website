@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { TitleAndMetaTags } from '../components/TitleAndMetaTags/TitleAndMetaTags';
-import { Section } from '../components/Section/Section';
-import { Contact } from '../components/Contact/Contact';
-import { FakeImg } from '../components/FakeImg/FakeImg';
-import { Banner } from '../components/Banner/Banner';
+import { TitleAndMetaTags } from '../../components/TitleAndMetaTags/TitleAndMetaTags';
+import { Section } from '../../components/Section/Section';
+import { Contact } from '../../components/Contact/Contact';
+import { FakeImg } from '../../components/FakeImg/FakeImg';
+import { Banner } from '../../components/Banner/Banner';
 
-import { createGroupedArray } from '../utils/createGroupedArray';
+import { createGroupedArray } from '../../utils/createGroupedArray';
 
-import stockImg from '../images/stock.jpg';
-import fullWidthImageTwoHandsImg from '../images/full-width-image-twohands.jpg';
+import stockImg from '../../images/stock.jpg';
+import fullWidthImageTwoHandsImg from '../../images/full-width-image-twohands.jpg';
 
-function Stockist({ className, shop }) {
+function Shop({ className, shop }) {
 	return (
 		<div className={`col sm-10 md-3 ${className}`}>
 			<div>
@@ -20,11 +20,11 @@ function Stockist({ className, shop }) {
 				<address>
 					{shop.address}
 					<br />
-					{shop.postCode}
+					{shop.postcode}
 				</address>
 				<a
 					href={`https://www.google.com/maps/dir/?api=1&destination=${
-						shop.postCode
+						shop.postcode
 					}`}
 					className="small faded"
 					target="_blank">
@@ -35,12 +35,12 @@ function Stockist({ className, shop }) {
 	);
 }
 
-function StockistsPage({ data }) {
-	const groupedData = createGroupedArray(data.allStockistsJson.edges, 3);
+function ShopsPage({ data }) {
+	const groupedData = createGroupedArray(data.allMarkdownRemark.edges, 3);
 
 	return (
 		<div className="main">
-			<TitleAndMetaTags title="Stockists" pathname="stockists" />
+			<TitleAndMetaTags title="Shops" pathname="shops" />
 			<Section>
 				<div className="grid">
 					<h1 className="col -block md-push-1 lg-push-2 title">
@@ -52,11 +52,11 @@ function StockistsPage({ data }) {
 				</div>
 
 				{groupedData.map((group, index) => (
-					<div key={`group-${index}`} className="grid stockist-list">
-						{group.map((shop, index) => (
-							<Stockist
-								key={shop.node.name}
-								shop={shop.node}
+					<div key={`group-${index}`} className="grid shops-list">
+						{group.map(({ node }, index) => (
+							<Shop
+								key={node.frontmatter.name}
+								shop={node.frontmatter}
 								className={index === 0 ? 'md-push-2 lg-push-3' : ''}
 							/>
 						))}
@@ -82,7 +82,7 @@ function StockistsPage({ data }) {
 				mobileImg={fullWidthImageTwoHandsImg}
 			/>
 
-			<Section className="-blue stockist-interest">
+			<Section className="-blue shops-interest">
 				<div className="grid">
 					<h2 className="h1 col md-push-1 lg-push-2">
 						Interested in stocking?
@@ -113,20 +113,24 @@ function StockistsPage({ data }) {
 	);
 }
 
+export default ShopsPage;
+
 // eslint-disable-next-line no-undef
 export const pageQuery = graphql`
-	query stockistsPageQuery {
-		allStockistsJson {
+	query ShopsQuery {
+		allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___outcode] }) {
 			edges {
 				node {
-					name
-					area
-					address
-					postCode
+					frontmatter {
+						title
+						name
+						area
+						address
+						postcode
+						outcode
+					}
 				}
 			}
 		}
 	}
 `;
-
-export default StockistsPage;

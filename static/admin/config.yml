@@ -1,3 +1,19 @@
 backend:
-  name: git-getaway
+  name: git-gateway
   branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "shops"
+    label: "Shop"
+    folder: "src/pages/shops"
+    create: true
+    slug: "{{name}}" # this will be filename
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Area", name: "area", widget: "string"}
+      - {label: "Address", name: "address", widget: "string"}
+      - {label: "Postcode", name: "postcode", widget: "string"}
+      - {label: "Outcode", name: "outcode", widget: "string"}

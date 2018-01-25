@@ -142,7 +142,7 @@ function IndexPage({ data, location }) {
 
 			<Product
 				postcodes={data.allPostcodesJson.edges[0].node.allowed}
-				stockists={data.allStockistsJson.edges}
+				stockists={data.allMarkdownRemark.edges}
 				location={location}
 			/>
 
@@ -169,7 +169,7 @@ function IndexPage({ data, location }) {
 
 // eslint-disable-next-line no-undef
 export const pageQuery = graphql`
-	query allStockistsBuyQueryAndAllPostcodesIndexQuery {
+	query IndexPageQuery {
 		allPostcodesJson {
 			edges {
 				node {
@@ -177,12 +177,15 @@ export const pageQuery = graphql`
 				}
 			}
 		}
-		allStockistsJson {
+		allMarkdownRemark {
 			edges {
 				node {
-					name
-					address
-					postCode
+					frontmatter {
+						name
+						address
+						postcode
+						outcode
+					}
 				}
 			}
 		}
