@@ -4,17 +4,18 @@
 	"version": "1.0.0",
 	"author": "Pedro Duarte <contact@peduarte.com>",
 	"dependencies": {
-		"gatsby": "^1.9.150",
-		"gatsby-link": "^1.6.33",
-		"gatsby-plugin-netlify": "^1.0.12",
+		"gatsby": "^1.9.166",
+		"gatsby-link": "^1.6.34",
+		"gatsby-plugin-netlify": "^1.0.15",
 		"gatsby-plugin-netlify-cms": "^1.0.5",
-		"gatsby-plugin-nprogress": "^1.0.9",
-		"gatsby-plugin-react-helmet": "^2.0.3",
-		"gatsby-plugin-sass": "^1.0.15",
-		"gatsby-source-filesystem": "^1.5.11",
+		"gatsby-plugin-nprogress": "^1.0.11",
+		"gatsby-plugin-react-helmet": "^2.0.4",
+		"gatsby-plugin-sass": "^1.0.16",
+		"gatsby-source-filesystem": "^1.5.14",
 		"gatsby-transformer-json": "^1.0.14",
+		"gatsby-transformer-remark": "^1.7.29",
 		"query-string": "^5.0.1",
-		"react-ga": "^2.4.0",
+		"react-ga": "^2.4.1",
 		"react-helmet": "^5.2.0",
 		"react-load-script": "^0.0.6",
 		"react-typist": "^2.0.4",
@@ -31,24 +32,21 @@
 		"prepush": "yarn test"
 	},
 	"lint-staged": {
-		"*.{js,jsx}": [
-			"prettier --config .prettierrc --write",
-			"git add"
-		]
+		"*.{js,jsx}": ["prettier --config .prettierrc --write", "git add"]
 	},
 	"devDependencies": {
 		"babel-eslint": "^8.2.1",
-		"eslint": "^4.15.0",
+		"eslint": "^4.16.0",
 		"eslint-config-fbjs": "^2.0.1",
 		"eslint-config-prettier": "^2.9.0",
 		"eslint-plugin-babel": "^4.1.2",
-		"eslint-plugin-flowtype": "^2.41.0",
+		"eslint-plugin-flowtype": "^2.41.1",
 		"eslint-plugin-jsx-a11y": "^6.0.3",
-		"eslint-plugin-prettier": "^2.4.0",
+		"eslint-plugin-prettier": "^2.5.0",
 		"eslint-plugin-react": "^7.5.1",
 		"eslint-plugin-relay": "^0.0.20",
 		"husky": "^0.14.3",
-		"lint-staged": "^6.0.0",
-		"prettier": "^1.9.2"
+		"lint-staged": "^6.0.1",
+		"prettier": "^1.10.2"
 	}
 }
