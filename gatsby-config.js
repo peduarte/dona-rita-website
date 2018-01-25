@@ -5,7 +5,6 @@ module.exports = {
 	plugins: [
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sass',
-		'gatsby-transformer-json',
 		{
 			resolve: 'gatsby-plugin-nprogress',
 			options: {
@@ -13,11 +12,20 @@ module.exports = {
 				showSpinner: false
 			}
 		},
+		'gatsby-transformer-json',
+		'gatsby-transformer-remark',
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
 				name: `data`,
 				path: `${__dirname}/src/data/`
+			}
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `pages`,
+				path: `${__dirname}/src/pages/`
 			}
 		},
 		'gatsby-plugin-netlify',
