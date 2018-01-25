@@ -118,7 +118,7 @@ export default ShopsPage;
 // eslint-disable-next-line no-undef
 export const pageQuery = graphql`
 	query ShopsQuery {
-		allMarkdownRemark {
+		allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___outcode] }) {
 			edges {
 				node {
 					frontmatter {
