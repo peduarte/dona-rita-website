@@ -84,17 +84,10 @@ export class Product extends React.Component {
 
 						{this.props.soldout && (
 							<div>
-								{/* <h3 className="color-salmon1 yellow">SOLD OUT.</h3>
+								<h3 className="color-salmon1 yellow">SOLD OUT.</h3>
 								<p className="small">
 									We'll be back next year with many more cheese balls, watch
 									this space.
-								</p> */}
-								<h3 className="color-salmon1 yellow">CLOSED FOR HOLIDAY 🏝</h3>
-								<p className="small">
-									Our online store is currently closed. The Dona Rita team is
-									taking some time off in Brazil. Don't worry we'll be back and
-									we'll re-open our online store on the 27th of March. Thank
-									you!
 								</p>
 							</div>
 						)}
