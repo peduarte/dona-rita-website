@@ -95,7 +95,7 @@ export class ProductHolder extends React.Component {
 			<div>
 				<div id="product-holder">
 					<p className="small delivery-date">
-						<CalendarIcon /> Delivery note: We'll be back from holiday on the 26th of March. We'll aim to deliver all online orders between the 27th and the 31st of March.
+						<CalendarIcon /> Delivery date: usually within 3-5 days
 					</p>
 					<div id="product-inject" />
 				</div>
