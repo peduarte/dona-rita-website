@@ -86,8 +86,7 @@ export class Product extends React.Component {
 							<div>
 								<h3 className="color-salmon1 yellow">SOLD OUT.</h3>
 								<p className="small">
-									We'll be back next year with many more cheese balls, watch
-									this space.
+									We'll be back soon with more cheese balls, watch this space.
 								</p>
 							</div>
 						)}
