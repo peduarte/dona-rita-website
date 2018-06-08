@@ -144,6 +144,7 @@ function IndexPage({ data, location }) {
 				postcodes={data.allPostcodesJson.edges[0].node.allowed}
 				stockists={data.allMarkdownRemark.edges}
 				location={location}
+				soldout
 			/>
 
 			<Banner img={bannerImg} mobileImg={bannerMobileImg} />
