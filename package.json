@@ -3,6 +3,16 @@
 	"description": "Dona Rita Website",
 	"version": "1.0.0",
 	"author": "Pedro Duarte <contact@peduarte.com>",
+	"main": "n/a",
+	"scripts": {
+		"build": "gatsby build",
+		"develop": "gatsby develop",
+		"diff": "prettier --config .prettierrc --list-different \"src/**/*.js\"",
+		"format": "prettier --config .prettierrc --write \"src/**/*.js\"",
+		"test": "eslint .",
+		"precommit": "lint-staged",
+		"prepush": "yarn test"
+	},
 	"dependencies": {
 		"gatsby": "^2.0.44",
 		"gatsby-plugin-layout": "^1.0.8",
@@ -24,16 +34,6 @@
 		"react-load-script": "^0.0.6",
 		"react-typist": "^2.0.4",
 		"react-visibility-sensor": "^5.0.2"
-	},
-	"main": "n/a",
-	"scripts": {
-		"build": "gatsby build",
-		"develop": "gatsby develop",
-		"diff": "prettier --config .prettierrc --list-different \"src/**/*.js\"",
-		"format": "prettier --config .prettierrc --write \"src/**/*.js\"",
-		"test": "eslint .",
-		"precommit": "lint-staged",
-		"prepush": "yarn test"
 	},
 	"lint-staged": {
 		"*.{js,jsx}": [
