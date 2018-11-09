@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
 
 import { Nav } from '../components/Nav/Nav';
+import { CrossIcon } from '../icons/CrossIcon';
 import './index.scss';
 
 const faviconSizes = [16, 32, 64];
@@ -11,6 +12,9 @@ const faviconSizes = [16, 32, 64];
 export default class TemplateWrapper extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			showSadNotice: true
+		};
 	}
 
 	componentDidMount() {
@@ -43,6 +47,26 @@ export default class TemplateWrapper extends React.Component {
 						/>
 					))}
 				</Helmet>
+				{this.state.showSadNotice && (
+					<div className="sad-notice">
+						<div className="sad-notice-inner">
+							<button
+								className="sad-notice-close"
+								onClick={() => this.setState({ showSadNotice: false })}>
+								<CrossIcon />
+							</button>
+							<h3>time to say goodbye</h3>
+							<p>
+								Critical dependencies: 42:378-385 This seems to be a pre-built
+								javascript file. Though this is possible, it's not recommended.
+								Try to require the original source to get better results.
+							</p>
+							<button onClick={() => this.setState({ showSadNotice: false })}>
+								Continue to website
+							</button>
+						</div>
+					</div>
+				)}
 				<Nav />
 				{children()}
 			</div>
