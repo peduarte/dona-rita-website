@@ -48,7 +48,7 @@ export default class Layout extends React.Component {
 				{this.state.showSadNotice && (
 					<div className="sad-notice">
 						<div className="sad-notice-inner">
-							<h3>Time to say goodbye</h3>
+							<h3>Time to say goodbye.</h3>
 							<p>
 								After a year filled with cheese balls, excitement and hard work we're
 								stopping our project to focus on other life events. We had a blast and we
