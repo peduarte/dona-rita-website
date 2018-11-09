@@ -55,12 +55,8 @@ export default class TemplateWrapper extends React.Component {
 								onClick={() => this.setState({ showSadNotice: false })}>
 								<CrossIcon />
 							</button>
-							<h3>time to say goodbye</h3>
-							<p>
-								Critical dependencies: 42:378-385 This seems to be a pre-built
-								javascript file. Though this is possible, it's not recommended.
-								Try to require the original source to get better results.
-							</p>
+							<h3>Time to say goodbye</h3>
+							<p>:(</p>
 							<button onClick={() => this.setState({ showSadNotice: false })}>
 								Continue to website
 							</button>
