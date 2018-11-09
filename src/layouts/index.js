@@ -53,13 +53,16 @@ export default class Layout extends React.Component {
 								After a year filled with cheese balls, excitement and hard work we're
 								stopping our project to focus on other life events. We had a blast and we
 								couldn't have done it without you - Thank you! You can still browse our
-								website but the online shop is now closed. If you'd like to read more
+								website but the online shop is now closed. If you'd like to know more
 								about our closure,{' '}
 								<a href="https://medium.com/@OiDonaRita/time-to-say-goodbye-e56803c3f084">
 									read our goodbye letter
 								</a>
-								. If you really need some Pao de Queijo in your life, Rita might be able
-								to offer a catering option. You can contact her at{' '}
+								.
+							</p>
+							<p>
+								If you really need some Pão de Queijo in your life, Rita might be able to
+								offer a catering option. You can contact her at{' '}
 								<a href="mailto:ritaduarte@hotmail.co.uk">ritaduarte@hotmail.co.uk</a>.
 							</p>
 							<button onClick={() => this.setState({ showSadNotice: false })}>

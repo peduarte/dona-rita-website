@@ -84,9 +84,18 @@ export class Product extends React.Component {
 
 						{this.props.soldout && (
 							<div>
-								<h3 className="color-salmon1 yellow">SOLD OUT.</h3>
-								<p className="small">
-									We'll be back soon with more cheese balls, watch this space.
+								<h3 className="color-salmon1 yellow">CLOSED.</h3>
+								<p>
+									If you'd like to read more about our closure,{' '}
+									<a href="https://medium.com/@OiDonaRita/time-to-say-goodbye-e56803c3f084">
+										read our goodbye letter
+									</a>
+									.
+								</p>
+								<p className="postcode-message">
+									If you really need some Pao de Queijo in your life, Rita might be able
+									to offer a catering option. You can contact her at{' '}
+									<a href="mailto:ritaduarte@hotmail.co.uk">ritaduarte@hotmail.co.uk</a>.
 								</p>
 							</div>
 						)}
