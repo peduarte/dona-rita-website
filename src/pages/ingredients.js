@@ -14,7 +14,8 @@ function IngredientsPage() {
 			<Section>
 				<div className="grid">
 					<h1 className="col -block md-push-1 lg-push-2 title">
-						Ingredients &amp;<br />
+						Ingredients &amp;
+						<br />
 						allergens.
 					</h1>
 				</div>
@@ -22,16 +23,15 @@ function IngredientsPage() {
 				<div className="grid">
 					<div className="col md-7 lg-5 md-push-1 lg-push-2 lg-push-3">
 						<p className="measure">
-							The ingredients used in Dona Rita's Pão de Queijo are: cassava
-							(tapioca) flour, our secret combination of cheese, semi skimmed
-							milk, fresh eggs, sea salt, and unsalted organic butter.
+							The ingredients used in Dona Rita's Pão de Queijo are: cassava (tapioca)
+							flour, our secret combination of cheese, semi skimmed milk, fresh eggs, sea
+							salt, and unsalted organic butter.
 						</p>
 
 						<p className="measure">
 							They contain <strong>milk</strong> and <strong>egg</strong>. They{' '}
-							<strong>don't contain gluten</strong>. They're prepared and baked
-							in our gluten free kitchen – so there's no risk of cross
-							contamination.
+							<strong>don't contain gluten</strong>. They're prepared and baked in our
+							gluten free kitchen – so there's no risk of cross contamination.
 						</p>
 						<p>
 							We use the best ingredients when they are at their freshest. 0%

@@ -94,29 +94,24 @@ export class Product extends React.Component {
 						{!this.props.soldout && (
 							<div className="postcode" id="postcode-holder">
 								<p className="small">
-									We're a small family business and we only deliver in certain
-									postcodes. Enter your postcode below and let's hope we can
-									deliver to you.
+									We're a small family business and we only deliver in certain postcodes.
+									Enter your postcode below and let's hope we can deliver to you.
 								</p>
 
-								{!this.state.isDeliverable &&
-									!this.shouldSkipValidation() && (
-										<PostcodeValidator
-											onValidPostcode={this.handleValidPostcode}
-											onInvalidPostcode={this.handleInvalidPostcode}
-										/>
-									)}
+								{!this.state.isDeliverable && !this.shouldSkipValidation() && (
+									<PostcodeValidator
+										onValidPostcode={this.handleValidPostcode}
+										onInvalidPostcode={this.handleInvalidPostcode}
+									/>
+								)}
 
 								{(this.state.isDeliverable || this.shouldSkipValidation()) && (
 									<ProductHolder initialQty={this.getInitialQty()} />
 								)}
 
-								{!this.state.isValid &&
-									this.state.userHasInteracted && (
-										<p className="postcode-message">
-											Please enter a valid postcode.
-										</p>
-									)}
+								{!this.state.isValid && this.state.userHasInteracted && (
+									<p className="postcode-message">Please enter a valid postcode.</p>
+								)}
 
 								{this.state.isValid &&
 									!this.state.isDeliverable &&

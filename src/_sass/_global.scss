@@ -839,30 +839,7 @@ button {
 	animation: modalEnterKeyframes 666ms 333ms ease-out forwards;
 
 	@include medium {
-		padding: 40px
-	}
-}
-
-.sad-notice-close {
-	position: absolute;
-	top: 0;
-	right: 0;
-	border: 0;
-	line-height: 1;
-	width: auto;
-	margin: 0;
-	padding: 24px;
-
-	svg {
-		color: white;
-	}
-
-	&:hover {
-		background: transparent;
-
-		svg {
-			color: $colorBlue
-		}
+		padding: 40px;
 	}
 }
 

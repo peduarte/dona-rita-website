@@ -3,6 +3,7 @@ module.exports = {
 		title: 'Dona Rita'
 	},
 	plugins: [
+		'gatsby-plugin-layout',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-sass',
 		{
@@ -29,6 +30,6 @@ module.exports = {
 			}
 		},
 		'gatsby-plugin-netlify-cms',
-		'gatsby-plugin-netlify'	
+		'gatsby-plugin-netlify'
 	]
 };

@@ -22,7 +22,8 @@ function PressPage() {
 			<Section>
 				<div className="grid">
 					<h1 className="col -block md-push-1 lg-push-2 title">
-						Press.<br />
+						Press.
+						<br />
 						<span className="salmon">Word on the street.</span>
 					</h1>
 				</div>
@@ -30,9 +31,9 @@ function PressPage() {
 				<div className="grid">
 					<div className="col md-7 lg-5 md-push-1 lg-push-2 lg-push-3">
 						<p className="measure">
-							We’ve only been trading since March but the media are already
-							getting excited about Dona Rita. Here are some of the names that
-							wrote an article about us.
+							We’ve only been trading since March but the media are already getting
+							excited about Dona Rita. Here are some of the names that wrote an article
+							about us.
 						</p>
 					</div>
 				</div>
