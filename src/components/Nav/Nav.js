@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
 import { BurgerIcon } from '../../icons/BurgerIcon';
 import { CrossIcon } from '../../icons/CrossIcon';
@@ -46,9 +46,7 @@ export class Nav extends React.Component {
 
 				<nav
 					id="mobile-nav"
-					className={`main-nav -mobile ${
-						this.state.isOpened ? 'is-opened' : null
-					}`}>
+					className={`main-nav -mobile ${this.state.isOpened ? 'is-opened' : null}`}>
 					<a
 						className="mobile-menu -close"
 						onClick={this.handleClose}

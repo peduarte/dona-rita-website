@@ -808,3 +808,51 @@ button {
 		}
 	}
 }
+
+// sad notice ☹️
+.sad-notice {
+	position: fixed;
+	z-index: 8;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background: $colorSalmon;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	~ * {
+		display: none;
+	}
+}
+
+.sad-notice-inner {
+	width: 90vw;
+	max-width: 620px;
+	max-height: 90vh;
+	overflow: auto;
+	margin: 24px;
+	background: white;
+	padding: 24px;
+	opacity: 0;
+	animation: modalEnterKeyframes 666ms 333ms ease-out forwards;
+
+	@include medium {
+		padding: 40px;
+	}
+}
+
+@keyframes modalEnterKeyframes {
+	0% {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}

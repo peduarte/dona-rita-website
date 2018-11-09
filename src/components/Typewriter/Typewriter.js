@@ -26,9 +26,9 @@ export class Typewriter extends React.Component {
 					avgTypingDelay={120}
 					cursor={{ show: false }}
 					onTypingDone={this.handleDone}>
-					{this.props.texts.map(text => {
+					{this.props.texts.map((text, i) => {
 						return (
-							<span key={text}>
+							<span key={`${text}-${i}`}>
 								{text}
 								<Typist.Backspace count={text.length + 1} delay={750} />
 								<Typist.Delay ms={250} />
