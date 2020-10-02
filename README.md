@@ -1,4 +1,4 @@
-# Dona Rita Website
+# The Dona Rita Website
 
 ## Install dependencies
 ```
